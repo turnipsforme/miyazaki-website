@@ -13,8 +13,8 @@
   --paper-c:      #eef0ea;
   --paper-dark:   #23261f;
   --ink:          #22201c;
-  --muted:        #6f6a5f;
-  --faint:        #a39d8f;
+  --muted:        #615c50;
+  --faint:        #928b79;
   --accent:       #9c4a2f;      /* warm red-orange: film releases, major moments */
   --accent-soft:  #d98d6f;
   --green:        #5c6b5a;      /* muted green-gray: production years */
@@ -116,22 +116,6 @@ figcaption {
 }
 .rule { width: 4rem; margin: var(--space-lg) 0 var(--space-md);
   border: 0; border-top: 1px solid var(--rule); }
-.hero-intro { max-width: 34rem; }
-
-.legend {
-  display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-  margin: var(--space-md) 0 0;
-  font-size: .72rem;
-  color: var(--muted);
-}
-.legend span { display: inline-flex; align-items: center; gap: .45em; }
-.dot { display: inline-block; width: 1.4rem; height: 2px; }
-.dot-rel    { background: var(--accent); }
-.dot-prod   { background: var(--green); }
-.dot-quiet  { background: var(--faint); }
-
 .hero-scroll {
   margin-top: var(--space-xl);
   font-size: .78rem;
@@ -141,6 +125,64 @@ figcaption {
 }
 .hero-comb-hint { display: none; }
 @media (min-width: 60rem) { .hero-comb-hint { display: inline; } }
+
+/* ---------- 4b. Filmography at a glance ---------- */
+.filmography {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding: var(--space-xl) 1.5rem var(--space-sm);
+  border-bottom: 1px solid var(--rule);
+}
+.filmography h2 { font-size: 1.35rem; }
+.filmography-intro { color: var(--muted); font-size: .9rem; margin-top: var(--space-xs); }
+.film-grid {
+  list-style: none;
+  margin: var(--space-lg) 0 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-md);
+}
+.film-grid a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+.film-grid img, .film-grid .fg-blank {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  width: 100%;
+  border: 1px solid var(--rule);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.film-grid .fg-blank {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--paper-b);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--faint);
+  text-align: center;
+  padding: .5rem;
+}
+.film-grid a:hover img,
+.film-grid a:focus-visible img,
+.film-grid a:hover .fg-blank,
+.film-grid a:focus-visible .fg-blank {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(34,32,28,.12);
+}
+.fg-year {
+  margin-top: .5em;
+  font-family: var(--serif);
+  font-size: .8rem;
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+.fg-title { font-size: .74rem; line-height: 1.35; color: var(--ink); }
+@media (max-width: 59.99rem) {
+  .film-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--space-sm); }
+}
 
 /* ---------- 5. Chronology comb (desktop) ---------- */
 .comb {
@@ -340,12 +382,74 @@ blockquote {
   max-width: 34rem;
 }
 
+/* named chapters */
+.chapter-title {
+  display: block;
+  font-size: clamp(.85rem, 2vw, 1rem);
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: var(--accent);
+  margin-bottom: var(--space-xs);
+}
+.chapter-dark .chapter-title { color: var(--accent-soft); }
+
+/* minor events: connective tissue, visually quieter so landmarks pop */
+.event.minor { margin-bottom: 1.05rem; padding-left: 1.1rem; border-left: 1px solid var(--rule); }
+.event.minor .year { font-size: 1.3rem; }
+.event.minor h3 { font-size: 1.02rem; margin-bottom: .3rem; }
+.event.minor p { font-size: .94rem; }
+.chapter-dark .event.minor { border-left-color: #454034; }
+
+/* landing flash when jumping via the comb */
+@keyframes target-flash { from { background-color: rgba(156,74,47,.12); } to { background-color: transparent; } }
+.event:target, section[id]:target { animation: target-flash 1.6s ease-out both; }
+
+/* scroll progress rail (CSS scroll-driven animations, degrades gracefully) */
+.progress-rail {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  z-index: 50;
+  pointer-events: none;
+}
+.progress-rail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: top;
+  transform: scaleY(0);
+  animation: rail-grow linear both;
+  animation-timeline: scroll(root);
+}
+@keyframes rail-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@supports not (animation-timeline: scroll()) { .progress-rail { display: none; } }
+
+/* active comb entry while scrolling */
+.comb-list a.is-active .yr { color: var(--accent); }
+.comb-list a.is-active .line.l-prod,
+.comb-list a.is-active .line.l-rel { width: 4rem; }
+.comb-list a.is-active .label { opacity: 1; transform: none; }
+
 /* tonal shifts between eras */
 .tone-a { background: transparent; }
 .tone-b { background-color: var(--paper-b); }
 .tone-c { background-color: var(--paper-c); }
 .tone-d { background-color: #edf0e9; }
 .chapter-dark { background-color: var(--paper-dark); color: #e8e4d9; }
+/* legibility on dark chapters: lift all muted/secondary text */
+.chapter-dark .meta,
+.chapter-dark .age,
+.chapter-dark .chapter-intro,
+.chapter-dark p { color: #cdc6b4; }
+.chapter-dark .meta,
+.chapter-dark .age { color: #b0a892; }
+.chapter-dark figcaption { color: #a49c88; }
+.chapter-dark details { color: #b8b09c; border-top-color: #454034; }
+.chapter-dark .src:not(.light) { color: #9db08e; }
+.chapter-dark .hero-scroll { color: #b0a892; }
+.window-year .age { color: #b0a892; }
 .chapter-dark .window-title { color: #f4f1e8; }
 .chapter-dark blockquote { color: #f0ecdf; }
 .tone-accent-end { background-color: #26221c; }
