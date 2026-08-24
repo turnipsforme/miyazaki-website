@@ -253,6 +253,28 @@ figcaption {
   font-size: .82rem;
   color: var(--ink);
 }
+/* mini poster thumbs at film-year marks: hidden until hover/active */
+.comb-list .thumbs {
+  order: 0;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: opacity 240ms ease, transform 240ms ease;
+  pointer-events: none;
+}
+.comb-list .thumbs img {
+  width: 30px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  display: block;
+}
+.comb-list a:hover .thumbs,
+.comb-list a:focus-visible .thumbs,
+.comb-list a.is-active .thumbs { opacity: 1; transform: none; }
+
 /* colour coding — visible without hover */
 .comb-list .l-rel   { background: var(--accent); width: 2.6rem; }
 .comb-list .l-prod  { background: var(--green);  width: 1.6rem; }
@@ -599,7 +621,7 @@ footer a { color: inherit; }
   }
   .comb-list .line { width: 1.4rem !important; flex: 0 0 auto; }
   .comb-list .l-rel.line { width: 2.2rem !important; }
-  .comb-list .label { display: none; }
+  .comb-list .label, .comb-list .thumbs { display: none; }
   .comb-list .yr { font-size: .8rem; min-width: 0; }
   footer, .hero { padding-bottom: 6rem; }
   .hero-comb-hint { display: none; }
