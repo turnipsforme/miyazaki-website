@@ -1,0 +1,71 @@
+{
+ "miyazaki": {
+  "file": "HayaoMiyazakiCCJuly09.jpg"
+ },
+ "cagliostro": {
+  "file": "Castle of Cagliostro poster.png",
+  "url": "https://upload.wikimedia.org/wikipedia/en/4/4f/Castle_of_Cagliostro_poster.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "nausicaa": {
+  "file": "Nausicaaposter.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/en/b/bc/Nausicaaposter.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "totoro": {
+  "file": "My Neighbor Totoro - Tonari no Totoro (Movie Poster).jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/en/0/02/My_Neighbor_Totoro_-_Tonari_no_Totoro_%28Movie_Poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "kiki": {
+  "file": "Kiki's Delivery Service (Movie Poster).jpg",
+  "url": null,
+  "artist": "",
+  "license": ""
+ },
+ "porco": {
+  "file": "Porco Rosso (Movie Poster).jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/en/f/fc/Porco_Rosso_%28Movie_Poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "mononoke": {
+  "file": "Princess Mononoke Japanese poster.png",
+  "url": "https://upload.wikimedia.org/wikipedia/en/8/8c/Princess_Mononoke_Japanese_poster.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "spirited": {
+  "file": "Spirited Away Japanese poster.png",
+  "url": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "howl": {
+  "file": "Howls-moving-castleposter.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/en/a/a0/Howls-moving-castleposter.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "ponyo": {
+  "file": "Ponyo.png",
+  "url": "https://upload.wikimedia.org/wikipedia/en/5/51/Ponyo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "windrises": {
+  "file": "Kaze Tachinu poster.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/en/a/a3/Kaze_Tachinu_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "",
+  "license": "Fair use"
+ },
+ "heron": {
+  "file": "How Do You Live poster.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/en/4/41/How_Do_You_Live_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+  "artist": "Studio Ghibli",
+  "license": "Fair use"
+ }
+}
