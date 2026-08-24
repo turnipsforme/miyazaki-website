@@ -263,10 +263,16 @@ figcaption {
   transition: opacity 240ms ease, transform 240ms ease;
   pointer-events: none;
 }
+.comb-list .thumbs {
+  flex: none;
+}
 .comb-list .thumbs img {
   width: 30px;
-  aspect-ratio: 2/3;
+  height: 45px;
+  max-width: none;
   object-fit: cover;
+  object-position: center;
+  flex: none;
   border: 1px solid var(--rule);
   background: var(--paper);
   display: block;
