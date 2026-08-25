@@ -1,0 +1,42 @@
+---
+title: "The Hopes and Spirit of Contemporary Japanese Girls"
+date: 1989-01-01
+timeline_year: "1989"
+original_author: "Hayao Miyazaki"
+source_url: https://www.nausicaa.net/miyazaki/interviews/kiki_foreword.html
+excerpt: "Miyazaki's English foreword to The Art of Kiki's Delivery Service, on Kadono's story and the independence of contemporary Japanese girls."
+---
+
+## The Hopes and Spirit of Contemporary Japanese Girls By Hayao Miyazaki
+
+The English foreword to the book The Art of Kiki's Delivery Service
+
+**Disclaimer**  
+© 1989 by Tokuma Shoten  
+Transcribed without permission for **personal entertainment purpose** only.
+
+---
+
+\=============================================
+
+Eiko Kadono's original story, Majo no Takkyubin "Kiki's Delivery Service" (Published by Fukuinkan Shoten Publishers Inc.) is a fine work of children's literature warmly depicting the gulf that exists between independence and reliance in the hopes and spirit of contemporary Japanese girls.
+
+At one time the main characters of stories for young people gained financial independence, which was then equal to spiritual independence, after struggling through difficulties. In today's society, however, where anyone can earn money going from one temporary job to another, there is no connection between financial independence and spiritual independence. In this era, poverty is not so much material as spiritual.
+
+In an era when leaving the security of one's home is no longer anything special, and living among strangers means nothing more than going to a convenience store for anything you need, it might be more difficult than ever to achieve a real sense of independence since you must go through the process of discovering your own talents and expressing yourself.
+
+The only unusual thing that the heroine, 13-year old Kiki can do is fly through the sky. Moreover in this world witches are not much more talented than normal girls. She has the duty to live for a year in an unfamiliar town and exercise her talents to make people acknowledge her as a proper witch.
+
+This is like someone who wants to be a cartoonist coming alone to Tokyo. Today there are said to be around 300,000 young men and women who are hoping to make it as cartoonists. Being a cartoonist is not that unusual a job. It is comparatively easy to get started and to make some sort of living. But a characteristic of modern life is that once the needs of daily life are taken care of the real problem of selfrealization begins. Kiki is protected by mother's old but well-looked-after broom, she has the radio that was a gift from father, and the black cat she is so close to that it is almost like a part of herself, but Kiki's heart wavers between isolation and longing for human company. In Kiki's life we see reflected the lives of so many young Japanese girls today who are loved and supported economically by their parents, but who long for the bright lights of the city, and are about to go there and become independent. The weakness of her determination and the shallowness of her understanding are also reflected in the world of today's young people.
+
+In the original, Kiki solves difficult problems with her naturally good heart. At the same time her circle of allies increases. In filming this we have had to make a few changes. The process of her developing her talent is surely pleasant but the spirit of our young girls living in the capital today is not so simple. The biggest problem for many young girls is the fight to break through the barrier of independence, and there are too many people who feel they have received not a single blessing. We feel, therefore, in this movie that we must give serious treatment to the problem of independence. As movies always create a more realistic feeling, Kiki will suffer stronger setbacks and loneliness than in the original.
+
+Our first image of Kiki when we meet her is of the form of a small girl flying through the night sky over the capital. Many lights shine, but there is not a single light to warmly beckon her. She is isolated as she flies in the sky. It is usually felt that the power of flight would liberate one from the earth, but freedom is accompanied by anxiety and loneliness. Our heroine is a girl who has decided to identify herself by her ability to fly. Quite a few TV cartoons about little witches have been made before this, but the witchcraft has always merely been the means to fulfill the dreams of young girls. They have always become idols with no difficulties. The witch of Majo no Takkyubin (Kiki's Delivery Service) does not possess that convenient kind of power.
+
+The talents of witch of this film are really little more than those possessed by any real-life girl.
+
+We are planning a happy ending. As Kiki flies over the town she feels a strong bond between herself and the people who live below, and is happy being herself. We are hoping to make the film persuasive enough that viewers will conclude that the ending is happy, rather than merely wish it to be so.
+
+I feel that this film will fulfill its goal of reaching out with a feeling of solidarity to our young viewers: the young girls living in today's world who do not deny the joy of youth, nor are carried away by it, torn between freedom and dependence (because we were all young men and women once, and the young members of our staff have these very problems now). At the same time I feel that the basic potential of this film as entertainment lies in this point and that it will inspire sympathy in the viewers.
+
+\-- Hayao Miyazaki

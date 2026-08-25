@@ -1,2 +1,5 @@
 .DS_Store
-*.md
+# root working notes only — site markdown (ARTICLE_WINDOWS.md) is tracked
+/*.md
+!/ARTICLE_WINDOWS.md
+/articles/

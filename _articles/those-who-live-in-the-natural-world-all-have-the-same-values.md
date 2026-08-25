@@ -1,0 +1,73 @@
+---
+title: "Those Who Live in the Natural World All Have the Same Values"
+date: 1997-08-01
+timeline_year: "1997"
+original_author: "Hayao Miyazaki"
+source_publication: "Interview by Kentarō Fujiki; Seiryū, Seiryū Shuppan, August issue, 1997"
+source_book: "Turning Point: 1997–2008, Hayao Miyazaki (VIZ Media, 2009)"
+excerpt: "Interviewed by Kentarō Fujiki in Seiryū: living in harmony with all living beings."
+---
+
+I want to live in harmony with all living beings
+
+Nature is not just the forests and the trees. It includes all sorts of things. At times there is drought, famine, damage by insects, and damage by beasts—all of these are part of nature too.
+
+Our ancestors cleared forests in order to stabilize their lives and secure a place to make a living. Cutting down trees wasn’t an end unto itself. Though we have been living by clearing forests, now the movement to preserve forests has grown. We have started to realize that we need to protect our forests because, unless we have forests, the conditions for our own lives will deteriorate.
+
+This way of thinking is obvious and very simple to understand. But the problem of whether to preserve just the parts that are beneficial to us or to preserve nature including the parts detrimental to us is something we must reconsider very seriously as we think about the relationship between human beings and nature.
+
+It is not simply a matter of which is good or bad. This is because how human beings relate to nature changes with the times.
+
+When we think of the relationship between human beings and nature, we must keep in mind that human beings are suffering for sins committed in previous lives. Unless we understand this, we will make wrong judgments. In fact, we have made mistakes.
+
+For example, recently some doctors have asserted that we “shouldn’t fight against cancer” as “cancer is part of one’s body.” When put that way, I can understand the “Don’t fight against cancer” way of thinking. Yet, if I were told I had cancer, I’m sure I would be quite agitated. I’m certain of that. [laughs]
+
+Human beings are convinced that we can live healthy lives if we get rid of all bacteria and viruses. But isn’t that a wrongheaded view of nature? We humans are beings that should live in a balanced way with organisms such as bacteria and viruses.
+
+Nowadays we tend to think of nature only in terms of its benefit to humanity. We don’t need mosquitoes and flies, so they are not part of nature and we can kill them. But I think that this sort of anthropocentric thinking is fundamentally wrong. People, beasts, trees, and water all are worthy of life. This is why we cannot have humans alone being able to live; we must make space for beasts and trees and water too. This is the way of thinking that existed in Japan in the past.
+
+I have made the film Princess Mononoke based on this way of thinking, which caused me a lot of headaches. [laughs] I’ve completed the film, but I still don’t know what kind of work it has become.
+
+Tetsuo Yamaori-san has said, “Japanese people see gods and Buddhas in many things in nature. Essentially, they are a religious ethnic group.” This is a type of animism, but not a religion in the Western sense. Japanese people have this kind of unnameable belief. For example, sweeping the garden clean is already a religious act.
+
+Try taking a look at the world through the eyes of an insect
+
+I have a mountain cabin, and when I have time, I go there alone. There’s no mistaking that going into the forest is extremely good for my mental health. After spending some time there, I become kinder to others, perhaps because I begin to long for people. I feel I want to talk to someone. My neighbors there may think of me as a weird guy who makes movies, but they associate with me in a pleasant manner.
+
+At my mountain cabin, I cook meals, wash clothes, cut wood, wash the windows, take walks. My days are a repetition of those activities. Walking on the same road each day, the landscape I see can seem entirely new depending on the shafts of light and the way the wind blows. I’m always discovering new things.
+
+But if I were told to give up everything and live in the mountains, I would refuse. It would be wonderful if I could, but I’m incapable of it. I have a friend who gave up everything and is now farming in Hokkaido, but he had the talent to do so.
+
+For me, it is best to be at my “main house” one day, and my “other house” the next, and go back and forth like that. [laughs] My main house is … it’s my house in the city, after all. [laughs]
+
+In any event, it’s better to have contact with nature, even if you have to force yourself to make time for it. If you keep making the excuse that you’re too busy, it will never happen. Many people think they’ll get into nature when they retire, but it’s much better to make it a habit while you are still young and healthy.
+
+That doesn’t mean, though, that I like the kind of “outdoor life” that involves whizzing around in a four-wheel drive.
+
+If you can’t go out, then you can at least look at the view from your window. I love the view from my window here on the second floor. It looks out onto the new leaves growing on the trees, through which steel towers for high-tension wires can be seen, and beyond is the wide blue sky. That sky over there changes day to day. What is important is not how many kilometers of space you have around you, but what kind of nature exists near you. This way, you’ll be sure to find a road that you like, which will lead you to taking walks in the area where you live.
+
+You could look at nature not as a human being but as if you were an insect that flies through that space, and think about what you could see if you landed on a leaf.
+
+I’m sure you would see an entirely different world. By acquiring a sense of nature from this viewpoint, even if we cannot change our outlook on nature, at least we can expand our outlook on nature.
+
+Keep on living no matter what the conditions!
+
+I didn’t want Princess Mononoke, the film that will be released this summer, to be a film that contributed to distrust of human activity. But I also threw away the perspective that humans were good. In each person there is stupidity just as there is wisdom. That is what humans are made of.
+
+I cherish human beings. Selflessness and purity exist even in the pebbles lying on the ground. What differentiates humanity is our scheming and cunning, behaviors that do not exist in nature.
+
+Everything we value comes from the natural world. When a ray of light pierces through a break in the clouds we feel a sense of magnificence, wondering if there might be something beyond the clouds, something beyond the power of humanity. It is an irrational presence that is overwhelmingly powerful. For example, it could be a giant serpent or dragon that calls forth a flood, or a gigantic tiger deep in the woods. Japanese people had a sense of nature as something that exists apart from the world of humans. That is why they took the attitude of being humble and modest in the face of nature.
+
+But when humanity stood superior to nature, we began to lose our fear of our behavior. People from the olden days would no doubt see children’s atopic dermatitis and various other present-day illnesses as punishment for making light of nature.
+
+Since humans are so cruel, I have tended to depict nature in a gentle way, but nature itself can be brutal. It can be irrational. It can be very capricious as to why one organism stays alive and another organism dies. Nature is totally indifferent to the good and evil of individual organisms.
+
+For organisms, there is a difference between the death of an individual and the death of a species. All individuals die. Humans have concerned themselves with individuals, so it was inevitable that they broke with the natural world. Their actions to protect individuals forced a crisis onto the species. What kind of concept, then, are we to bring to unify the individual and the species? Actually, I have no clue. Animism seems to be an effective way of thinking, but it is certainly not a solution …
+
+As I learned from the late Ryōtarō Shiba-san2, Japan’s population in the Kamakura period was about five million. The forests were verdant and the waters ran clear. In those days when a famine occurred, a vast number of people died. Within the beauty of nature, at times people faced misfortune. Even so, we have managed to survive until today.
+
+This means to me that from now on as well, even if the world’s population climbs to ten billion or twenty billion and nature is destroyed and various problems arise, the human race may somehow be able to survive. At present the problems of nature are being emphasized, but in each period there were great difficulties that we survived. Incidentally, the tagline for my new film, Princess Mononoke, is “Live.”
+
+I avoided having characters in the film engage in difficult reasoning. We are now living in an age when we can sniff out the lies in the excuses we hear.
+
+We are finished with denunciations. It is time for each person to think about what he or she can do in everyday life. It is enough that people do only what they can. Saving trees and sweeping up one’s neighborhood are of equal value.

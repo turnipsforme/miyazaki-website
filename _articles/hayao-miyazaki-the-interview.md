@@ -1,0 +1,106 @@
+---
+title: "Hayao Miyazaki: The Interview"
+date: 2014-02-14
+timeline_year: "2014"
+original_author: "Dan Sarto"
+source_url: https://www.awn.com/animationworld/the-hayao-miyazaki-interview
+excerpt: "At his studio, Miyazaki talks about The Wind Rises, the controversy it generated in Japan, and retirement."
+---
+
+<figure>
+  <img src="{{ '/images/articles/wind-rises-interview-portrait.jpg' | relative_url }}" alt="" loading="lazy">
+</figure>
+
+All images © 2013 Nibariki - GNDHDDTK
+
+Much has been written over the years about Hayao Miyazaki. Fans of his work speak of him in reverential tones. The richness of his characters, the beauty of his designs, the underlying themes of his stories merely hint at the complexity of his films, which consistently break Japanese box office records and, in the case of *Spirited Away*, have won an Academy Award. Add to this last year’s revelation that he was retiring, it’s understandable the commotion around his latest, and purportedly last feature, *The Wind Rises*, would be intense.
+
+Yet in many ways, *The Wind Rises* is very different from Miyazaki’s other work, both in its story and in the controversy it has generated throughout Japan. Based on a real figure in Japanese history, aircraft engineer Jiro Horikoshi, *The Wind Rises* is a story of personal triumph and tragedy, both a fatal love story as well as a glimpse into Japanese society in the years leading up to World War II.
+
+Nominated for an Oscar, *The Wind Rises* begins its main U.S. theatrical run at the end of February. Last week, I had the honor to speak with the director, who shared his feelings about why he was drawn to this particular story, if he expected the controversy it generated in his country and what were the biggest challenges he faced making the film.
+
+[Watch the video referenced here](https://www.youtube.com/watch?v=imtdgdGOB6Q)
+
+**Dan Sarto**: *Why tell this story? What originally attracted you to this story and what compelled you to create both the Manga and eventually an animated feature?*
+
+**Hayao Miyazaki**: At first, I had drawn a Manga, as a hobby actually. My producer, Mr. Suzuki looked at it and said, “Why don’t you make a movie about this?” That was the starting point. But I refused, many times, saying, “This won’t make a good movie” because we would have to leave children aside. This movie would be more focused for adults.
+
+Also, the staff that we hire at Studio Ghibli, they don’t know that much about history. I thought it would be difficult to teach them history. It would take too much time to do that. To draw old airplanes would be difficult.
+
+But while continuing those conversations with my producer, we finally concluded that we would make it a movie.
+
+**DS**: *What in particular about the themes of this story resonated with you, moved you enough to want to make a movie?*
+
+**HM**: As I was growing up, I remember the last years of World War II. The period before Japan entered into World War II, this is the period of my parents. All of that is a grey color to me. I don’t know what happened. I didn’t know that much about that era. Jiro Horikoshi and Hori Tatsuo were two people that were very interesting to me. Both experienced very sad things in their lives during that period. From the tragedy they experienced, these two people, as I continued to look at them, became the one protagonist in my film.
+
+<figure>
+  <img src="{{ '/images/articles/wind-rises-interview-bw.jpg' | relative_url }}" alt="" loading="lazy">
+</figure>
+
+**DS**: *Since originally you refused to make this film because it wouldn’t be for kids, now that you have made the movie, do you think kids will enjoy it? Does it have a message for kids as well as for adults?*
+
+**HM**: One of the staff at the studio mentioned that even if kids don’t understand the film now, the day will come when they will. They will remember the film and understand it. I mentioned to our staff that somehow, we are digging our own grave in a way by creating this film \[laughs\].
+
+**DS**: *It’s safe to say you haven’t dug any graves by making this film. What were the biggest challenges you faced, both you as the director and the studio as a whole, in making this film?*
+
+**HM**: First of all, the style of the movie represents a time that is completely different from the one we live in today, as far as the people that work at the studio. The way Japanese people behaved politely during that time, at that age, that is completely different now. How to sit on a tatami, for instance. How to walk in a kimono. We all needed to learn once again the details of this way of life. We used many old photographs as reference. We needed to imagine what Japan was like when the air was less polluted than today. That was one of the biggest challenges that we faced in making this film.
+
+Talking about myself, by the time I entered my 40s, I had already created what I wanted to create when I was a kid. In a way, I had already accomplished what I’d always wanted to do. After that, the biggest challenge was to find a good theme to make into a movie. It was like walking in a dark room. Not knowing where to go.
+
+<figure>
+  <img src="{{ '/images/articles/wind-rises-interview-still.jpg' | relative_url }}" alt="" loading="lazy">
+</figure>
+
+**DS**: *I’m sure you’ve been asked this 1000 times in the last few months so I apologize for being the 1001 <sup>st</sup> person to ask you. I’ve read this will be your last film and that you’re retiring. I’ve also read that it won’t be your last film and that you aren’t retiring. Is this your last film? Are you retiring?*
+
+**HM**: I shouldn’t have done that press conference saying to everyone that I’m taking my retirement. The ones closest to me don’t actually believe me \[laughs\]. I did not think *The Wind Rises* would be my last film when I started the production. It was only after the production was finished that I thought, “OK, this will be my last film.”
+
+**DS**: *This film has been met with controversy in Japan. You have been accused of being pro-military, anti-military and that your film glamorizes a man who designed machines of war. You have been criticized by both liberal and conservative Japanese politicians. When you chose to make this film, did you anticipate such controversy?*
+
+**HM**: In one way, I predicted it. But in another way, I thought the controversy and discussions would go much deeper than the ones I see today. I thought about how we should face these chaotic situations we face right now, how we should live in such difficult times. I thought the discussions would be deeper in that sense.
+
+I am against the use of nuclear power. But when I saw the press conference with the engineers working on the \[Fukushima\] power plants, answering questions, I saw the same type of purity of their soul that I portrayed in Jiro Horikoshi in the film. The problems of our civilization are so difficult that we can’t only put an “X” in a circle and say “Yes” or “No.”
+
+<figure>
+  <img src="{{ '/images/articles/wind-rises-interview-jiro-nahoko.jpg' | relative_url }}" alt="" loading="lazy">
+</figure>
+
+**DS**: *Your films have broken box office records in Japan but have had varying degrees of success in the U.S., partly because of problems in dubbing and distribution. But it’s also been said that U.S. audiences find your characters morally ambiguous. The good guys aren’t always good, the bad guys aren’t always bad. Audiences are looking for black and white, cut and dried moral resolution in their stories. Do you think most American audiences understand your films and can relate to the stories you tell?*
+
+**HM**: Americans understand my films in many different ways. I never wanted to create a film where you can easily say “This is yes” or “This is no” or it’s easy to put the “X” in a circle. Things are way more difficult and complex. History is as well. We can’t easily just say “Yes” or “No” to how we look at things.
+
+I feel love and a generosity from your country that you to watch such a film from the point of view of the United States. This film was made in Japan. We fought you in World War II. I am grateful that you watch my film.
+
+**DS**: *Is there any particular part of the creative process that gives you the most personal sense of satisfaction?*
+
+**HM**: I am most satisfied when my staff does good work. When one image or one scene that they draw is well done, I’m very happy.
+
+**DS**: *Do you think the big animation studios are taking enough risks in their storytelling?*
+
+**HM**: Speaking from my own experience, I would say you shouldn’t grow your studio too big. You need to make fewer films. I think my producer would agree. Making too many films puts you in a hectic situation. Try to stay modest. Actually, Studio Ghibli has grown maybe too much. I think 100 employees would have been ideal. When we needed to start using computers, the number of employees grew. We’ve had no choice but to grow bigger. You hire more people, you need more money so of course, you need to make more films.
+
+When I meet with my friends at Aardman Animation Studios, in the U.K., they always tell me how they’d wish they could go back to the garage where they started making animation with two people.
+
+<figure>
+  <img src="{{ '/images/articles/wind-rises-interview-nahoko.jpg' | relative_url }}" alt="" loading="lazy">
+</figure>
+
+**DS**: *As you integrated computers into your studio, did you ever consider working in 3D/CG?*
+
+**HM**: I can only create animation in 2D. There is no other choice for me. I don’t even know how to use a Smartphone.
+
+**DS**: Looking back over your career, your body of work, do you have any personal favorites?
+
+**HM**: Yes, there are a couple. First of all, I’m an animator. There are a couple scenes I created that I liked very much. Actually, it was from when I wasn’t working as a director. It was very fun to work as an animator. A director thinks more general than individual. It was always hard work to be a director.
+
+**DS**: *What’s next for you in retirement?*
+
+**HM**: I will continue to do the same things I’ve been doing every day. There are exhibition projects to do at the Ghibli Museum as well as short films we show only at the museum. I also want to continue working on some Manga that I do for a hobby. I will stay busy as usual.
+
+**DS**: *Any words of wisdom to pass on to the next generation of animators?*
+
+**HM**: Don’t follow the path of just one person. Strive to find your own path.
+
+\--
+
+*Dan Sarto is Publisher and Editor-in-Chief of Animation World Network.*

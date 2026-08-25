@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} — Hayao Miyazaki, Documents</title>
+<meta name="description" content="{{ page.excerpt | default: 'A source document from the Miyazaki chronology.' }}">
+<link rel="stylesheet" href="{{ '/styles.css?v=2.4' | relative_url }}">
+</head>
+
+<body class="article-page">
+<main class="article-document">
+  <header class="article-document-header">
+    <p class="article-document-kicker">Document · {{ page.timeline_year }}</p>
+
+    <h1 class="article-document-title">{{ page.title }}</h1>
+
+    <p class="article-document-byline">
+      {% if page.original_author %}{{ page.original_author }}{% endif %}
+      {% if page.date %} · <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time>{% endif %}
+      {% if page.source_publication %}<br><em>{{ page.source_publication }}</em>{% endif %}
+      {% if page.source_book %} · from {{ page.source_book }}{% endif %}
+    </p>
+
+    {% if page.source_url %}
+      <p class="article-document-source">
+        Source document{% if page.source_author %}, contributed by {{ page.source_author }}{% endif %} ·
+        <a href="{{ page.source_url }}">{{ page.source_url }}</a>
+      </p>
+    {% elsif page.source_author %}
+      <p class="article-document-source">Source document, {{ page.source_author }}</p>
+    {% endif %}
+  </header>
+
+  <div class="article-document-body">
+    {{ content }}
+  </div>
+
+  <footer class="article-document-footer">
+    <a class="return-link" href="{{ '/' | relative_url }}">← Back to the chronology</a>
+  </footer>
+</main>
+</body>
+</html>

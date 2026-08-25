@@ -92,3 +92,41 @@
     panel.hidden = true;
   });
 })();
+
+/* Article reading window: one reusable <dialog> + one lazy iframe.
+   Without JavaScript the teaser is simply a link to the standalone
+   article page, so no fallback markup is needed here. */
+(function () {
+  var dialog = document.querySelector('#article-dialog');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  var frame = document.querySelector('#article-frame');
+  var title = document.querySelector('#article-dialog-title');
+  var closeButton = document.querySelector('.article-dialog-close');
+  var lastArticleTrigger = null;
+
+  document.addEventListener('click', function (event) {
+    var trigger = event.target.closest('.article-window');
+    if (!trigger) return;
+
+    event.preventDefault();
+    lastArticleTrigger = trigger;
+
+    title.textContent = trigger.dataset.articleTitle || 'Article';
+    frame.title = trigger.dataset.articleTitle || 'Article';
+    frame.src = trigger.dataset.articleUrl || trigger.href;
+
+    dialog.showModal();
+  });
+
+  closeButton.addEventListener('click', function () { dialog.close(); });
+
+  /* clicking the backdrop (outside the document window) closes it */
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) dialog.close();
+  });
+
+  dialog.addEventListener('close', function () {
+    frame.removeAttribute('src');
+    if (lastArticleTrigger) lastArticleTrigger.focus();
+  });
+})();

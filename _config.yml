@@ -1,0 +1,21 @@
+# Jekyll configuration — GitHub Pages (project site)
+url: "https://turnipsforme.github.io"
+baseurl: "/miyazaki-website"
+
+markdown: kramdown
+highlighter: rouge
+
+permalink: pretty
+
+collections:
+  articles:
+    output: true
+    sort_by: date
+    permalink: /articles/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: article

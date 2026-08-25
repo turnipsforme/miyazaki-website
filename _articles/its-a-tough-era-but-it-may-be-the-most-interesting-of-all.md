@@ -1,0 +1,185 @@
+---
+title: "It's a Tough Era, But It May Be the Most Interesting of All: A Conversation with Tetsuya Chikushi"
+date: 2002-01-11
+timeline_year: "2002"
+original_author: "Hayao Miyazaki"
+source_publication: "Shūkan Kinyōbi (Weekly Friday), January 11, 2002"
+source_book: "Turning Point: 1997–2008, Hayao Miyazaki (VIZ Media, 2009)"
+excerpt: "Tetsuya Chikushi asks why Spirited Away set box office records — and what Miyazaki thinks children are up against."
+---
+
+It’s a Tough Era, But It May Be the Most Interesting of All: A Conversation with Tetsuya Chikushi
+
+Shūkan Kinyōbi, Weekly Friday, January 11, 2002
+
+CHIKUSHI: Some questions must be asked, even if they seem silly. Your most recent film, Spirited Away, has set box office records in Japan. Why do you think so many people have seen it?
+
+MIYAZAKI: I really don’t know. Some of the issues we thought about when making the film, or that caused us to ponder what to make, must have resonated with audiences.
+
+CHIKUSHI: Well, speaking as one of the members of the audience, one thing I can say is that it was fascinating. When I left the theater after the film ended, I had an incredible sense of satisfaction, of being fulfilled. In the era of directors like Ozu and Kurosawa, in the Golden Age of Japanese cinema, you could feel how directors were able to control everything all the way to the edges of the screen. They composed everything you could see at the edges the way they wanted, from the way the telephone poles stood, to the stirring of the trees. And I think the dramatic drop in the ability of the director to control the screen composition is what has led Japanese films to their current awful state. But with animation, it’s a different case; you’re also able to create everything we see on the screen, from edge to edge.
+
+MIYAZAKI: Well, actually, the staff members all get together and draw it. Of course, I have to direct them, though.
+
+CHIKUSHI: But because you control the screen totally, I think people feel they need to see your films more than once, and that’s why they go back and see them again.
+
+MIYAZAKI: I was told that people couldn’t understand Princess Mononoke unless they saw it more than once. So we actually talked about how if we made hard-to-understand films, audiences would come back to see them over and over again, and we would make more money. [laughs]
+
+Uneasy over concepts of justice
+
+CHIKUSHI: In my case, I wasn’t able to see Spirited Away at first because the theaters were too crowded. As a result, I wound up seeing it after the terror attacks of 9 /11. I had all sorts of feelings about the attacks, but mainly what I would call a type of despondency or helplessness predominated. In other words, a feeling that all forms of expression—including music and even images—were being rendered meaningless. Terrorism is a form of violence, and the reaction of countries like America is also violent, and where these two trends compete there is also a strong sense of helplessness and discomfort. I just feel that something’s not right.
+
+MIYAZAKI: Everyone seems to feel that way. It seems as though all those who feel they have to make a statement, or say that terrorism has to be destroyed or that we have to fight and so forth, are all responding out of proportion.
+
+CHIKUSHI: Right, and what they’re fighting about over there is, frankly, a monotheistic world. Each side tells the other that it “has absolute justice on its side” and hates the other. In Japan, even Prime Minister (Junichirō) Koizumi has been going around saying all sorts of things, but none of his words have any power behind them.
+
+MIYAZAKI: Right. They don’t.
+
+CHIKUSHI: So that’s the context in which I saw Spirited Away. Japan was in a confused state, with almost nothing to say to the rest of the world about the state of affairs. But when I finished watching the film, I finally felt that maybe Japan did have something to say, that maybe it did have some message to impart after all. That was my biggest thought after viewing the film.
+
+MIYAZAKI: I’m very happy to hear you say that.
+
+CHIKUSHI: In the film we see the otherwise-scary spirits of rivers and mountains, or nearly every deity under the sun, gather together at the Yuya, or Aburaya, bathhouse, the main setting for the story, for their therapeutic baths.
+
+MIYAZAKI: Yes, all nameless spirits.
+
+CHIKUSHI: So when all the spirits gather there, it’s really a representation of the world of polytheism, of many gods. And when you send this film out into the world, you are in effect sending a powerful message; you are saying to those in the world fighting over their belief in only one god that there is indeed another way of looking at things, that another worldview is possible.
+
+MIYAZAKI: Actually, when we were trying to decide whether or not to release Spirited Away in America, we had some folks over there look at it. They said they could understand it up to a point. But they also said that when Chihiro, the heroine, was given a bitter dumpling by the river spirit, they thought she would use it to defeat Yubaba (who controls the bathhouse) in a fight. Instead, the plot turned in a totally unexpected direction, they got completely lost, and that was it. So I really felt the inflexibility, or tenaciousness, of gods in monotheistic religions.
+
+CHIKUSHI: Conversely, what’s also interesting is that what completely confuses people is in itself an incredible power, or even a message. I’m sure the film will also be seen in Asia, in places like Hong Kong and Singapore, right?
+
+MIYAZAKI: Yes, but I’m not sure that Asia really has the primitive type of polytheistic world we’re talking about here. I’m not completely sure about some aspects of that now. I’m not even sure how Japanese people would have reacted to this film if they had seen it during the years of Japan’s high economic growth. They probably wouldn’t have understood it either.
+
+CHIKUSHI: Maybe you’re right.
+
+MIYAZAKI: That’s why I think Spirited Away is something extremely local—it’s from what I would call a “land of aboriginals on the edge of East Asia,” a place never completely civilized by Confucianism, where there are lots of older local customs and Shinto rituals. It’s the product of a land where there are still lots and lots of different shrine rituals.
+
+On the other hand, if people in Japan are wondering whether they should send warships because they have to do something to help fight against terror, I think rather than worrying about whether it’s right or wrong, or how it should be interpreted in the context of our constitution, it would be better to decide whether it would be good or bad for Japan. I’m worried to death about whether the Koizumi cabinet’s doing this, worried the way a kid would be: What on earth is the old man thinking?
+
+CHIKUSHI: Well, the person we’ve got for prime minister now has a hot-blooded streak, so he’s prone to more and more autosuggestion. Right after 9 /11, his first response was the same as everyone else’s, to basically say that the whole thing is terrifying. But then he started saying that he would make his own decision on the matter, right? And everyone was going around looking at him like he was a liar. Thinking that maybe he had been told to “show the flag.”
+
+MIYAZAKI: Well, the people of this country really don’t want to go to war. The economic war took place within the framework of foreigners’ logic, so it’s not thought of as having been a war. So at least we’re not a country full of nationalists screaming about going to “war.”
+
+On the other hand, the histories of America and England are filled with wars. So it’s easy for them to start quoting passages from the Old Testament, saying all sorts of things that sound good, and then plunging into war. That’s why, when I saw Bush—the guy with the awful face, with close-set eyes, and that heartless look—and I’ll say this directly—every time he said we had to “choose which side to be on” I kept saying over and over again, “Neither, damn it.” What Bush calls “justice” is the kind of thing where, if you get a hundred people together, you can get one hundred different interpretations.
+
+CHIKUSHI: I think that’s what makes us feel so uncomfortable.
+
+MIYAZAKI: I’ve heard people say that Islamist suicide bombings started after the Japanese Red Army staged their attack in Tel Aviv. That suicide bombing was exported from Japan. It’s really amazing.
+
+CHIKUSHI: What’s even more amazing is that recently Rokusuke Ei has been saying that he thinks Japanese people may actually like terrorists. At year end, on TV and so forth, as you know, they always show the popular story of the forty-seven ronin of Akō, but he says that if you really translated the title into English, it should be “47 Terrorists.”
+
+MIYAZAKI: Right. Who knows how many people Golgo 13, the hero of the eponymous manga story (Takao Saitō/Saitō Productions, Shōgakukan/Leed Publishing Company) has killed? So even if someone suddenly says that we should hate all terrorists, we feel like we’re really not on a solid footing. And in spite of that, the general mood makes us feel as though if we do say anything, we’ll get in trouble, and that if I, for example, suddenly say something here, the PR guy (from Ghibli, who is sitting in on the conversation) will make a face, as if to say that here I go off making some dangerous remark.
+
+They say it’s always better to be honest. Really. I agree completely.
+
+An era when young people will become healthy
+
+MIYAZAKI: The artist Shūsaku Arakawa, who lives in New York, says that the key point here is the Palestinian issue. So then the question is whether there is any solution to the problem. Well, Arakawa says Japan has the world’s most advanced technology for installing giant pilings in the sea and then constructing a surface on which to put soil and create artificial land. In fact, he says that Japan’s far more advanced in this than any other country. So he proposes that since we have this technology, and since we would have to pay the costs of any war that might occur anyway, that we should use the money instead to create a city on a giant man-made landmass somewhere in the Mediterranean.
+
+This would be a city free from all the various problems that have cursed the issue, such as history itself, so he says that Palestinians and Jews, and even Buddhists and Hindus and Christians, should all gather there together to create a new sacred space. Of course, the original sacred sites of the Holy Land would be kept as is, but he says that creating new sacred sites would be the best way to achieve a solution. It’s been one of the most interesting ideas I’ve heard so far.
+
+CHIKUSHI: And if people were serious about this, the amount of money it would cost would be nothing compared to what they’re already spending on wars.
+
+MIYAZAKI: I agree. If only the prime minister of Japan would make a speech like that at the United Nations, it would really make our young people feel a lot better. They’d probably stand up a lot straighter.
+
+CHIKUSHI: With 9 /11, I think what’s come into focus is a tremendous worldwide form of monotheism, one called “globalism.” It’s taken a huge hit. In Europe, lots of people hate the idea of a world where America’s the only deity before which everyone else has to genuflect. As for China, it will continue to operate for a while under the monotheistic religion of money-worship, and so will Asia in general, but sooner or later people there too will realize that money can’t buy happiness.
+
+MIYAZAKI: Yes, soon. I think it will happen soon. Sooner even than in Japan. I think lots of people already realize that.
+
+In the twenty-first century, there’ll obviously be chaos on a material and political level, and it may be a tough period. But compared to the twentieth century that we’ve been living in, all sorts of things that we take for granted will be overturned, and we’ll be forced to confront a “Copernicus-style” revolution. If today’s young people open their eyes, I think this could be the most interesting of all ages.
+
+Right before the bubble appeared in Japan’s economy, the whole world seemed covered in concrete, and wherever you looked in Tokyo it all seemed so hopeless. And I wondered if something might change it. We now know how fragile it all really was. And I think this idea might energize young people.
+
+CHIKUSHI: As far as the terror this time is concerned, the reaction we’re seeing is that of civilization going backward, of things happening in a way capable of instantly destroying everything that’s been built up, including all international rules.
+
+MIYAZAKI: But it’s weird to have had fifty thousand people all gathered together in one place (the World Trade Center), just staring at computers and thinking about how to make money. It’s totally weird. And then if you ask what should be done about the five thousand who died, well, that’s a really painful question. But that doesn’t mean that going into a building, punching a computer, and making money is necessarily the best way to live.
+
+CHIKUSHI: When I spoke with you before once, you said that out of all the children in the world, Japanese children have the least sparkle in their eyes. And that may be true, but you also said that if one were to take them out into nature and let them loose for a week, that the sparkle would come back. And in that context, at the beginning of Spirited Away Chihiro’s not very appealing at all and seems numb to everything around her. But then she gradually becomes more and more alive. In watching the film, I was reminded of what you had talked about.
+
+MIYAZAKI: Drawing the storyboards for that—where she’s just lolling about in the backseat of the car and ignoring her father—was new for me, and a new form of expression. But the women on our staff all said that in their experience, they wouldn’t have answered like that after their father addressed them once. When in a snit, they’d have made him address them at least three times.
+
+Today’s kids are ruined even before they start going to primary school. Some say they’re ruined even before going to kindergarten. In the old days, children were little imps and balls of energy, and they had to be carefully trained so they wouldn’t do outrageous things. Now they don’t have any energy. The breakdown in classroom discipline is the perfect example of it. So before we think about how we should educate kids, we’ve got to get them to be little devils again. To get them to be the sort of kids you’d want to yell at, saying “Why you little brats!”
+
+I’m not saying we should blame everything on MEXT [the Ministry of Education, Culture, Sports, Science, and Technology]. It’s not that the people at home are bad people, or that when bad people raise kids the kids turn into bad or boring people. Lots of mothers out there love their kids as much as they can. They try as hard as they can to do everything right, but still they worry they’re not raising their kids in the way recommended by parenting manuals and then agonize over the fact that they feel they have to love their kids but can’t love them enough.
+
+Agriculture will come back when annual salaries are halved
+
+CHIKUSHI: If the people of a nation can become either wise or foolish, the question is, “When did foolish people become so?” Specifically, I’m wondering when the Japanese people became so foolish.
+
+MIYAZAKI: I’d say it was probably around the end of the Meiji Era, when Japan won the Russo-Japanese War. I think that Japanese people have a psychological complex—that they’ve been depressed ever since the feudal system collapsed, when Commodore Perry arrived in Japan and used his gunboats to force us to open our land to outsiders. When Japan actually won a war 1905, it amplified this complex, to the point where people started thinking, “Hey, we’re really a first-rate nation now!”
+
+CHIKUSHI: And so, after World War II, the battlefield basically just switched to economics, but we kept doing the same thing, and we lost again.
+
+MIYAZAKI: I recently saw something someone had written to the effect that one dollar would eventually be worth around 250 yen. It occurred to me that, if so, our annual incomes would basically be halved. Even if gasoline were harder to find, and even if the price of imports went up, since everyone’s income would go down together, people would probably understand.
+
+It’d be okay, because we’d still be able to eat. Of course, I don’t know what would happen to the sixty-five-yen hamburgers, but there’s a real chance that a weaker yen would blow some life into Japan’s ailing agricultural industry. In fact, people might stop talking about purchasing food from China and start making the food they eat by themselves; it’s a perfectly reasonable idea, and it’d be a lot easier to do if people’s incomes were halved.
+
+It’s not a scary idea because it’s not just Japan that’s in danger of sinking; it’s the whole world. We should have been prepared for something like this happening at the end of the twentieth century. The population of Earth may not become 10 billion; it may in fact drop to 2 billion. All sorts of things can happen. But like they say, it’s better to think positively and keep on living and raising our kids. That’s why I made Princess Mononoke. Our current civilization is at a dead end. What we really need is young people who can see far into the future, much farther than we can, “with eyes unclouded.”6 That’s why I keep telling people that they don’t really need to go buy Louis Vuitton products and so forth, that it’s okay to go back to the days of shopping with an old-style shopping basket in hand. Who needs video games? And we don’t need to be using all this electricity. It’s even okay to take a bath only once every two days.
+
+CHIKUSHI: Right. Succeeding generations will probably come to think of that as normal. They’ll adapt.
+
+MIYAZAKI: When you open the newspapers these days, there are all sorts of articles about people suddenly being thrown out of work because some IT company has gone out of business. Since they don’t have any savings at all, after paying the rent with their unemployment insurance they’re left with only fifty or sixty thousand yen and wondering how in the world they’re going to get by. With the government beating the drums for IT, people are always eager to jump on board, right? But they’d be better off thinking of it as a lesson well learned. It’s not a good idea to swallow everything the government says because, if you listen carefully, everything commentators on the economy say comes with wishful thinking and unstated disclaimers, in unwritten parentheses at the end, as in “the economy will see an upturn in two years (hopefully)” or “(if not we’re in trouble).”
+
+It’s so disgusting. They’re like frogs, but to make that analogy would be an insult to frogs. [laughs] When I think of how those crass old jerks have had control over Japan’s politics, it makes me furious.
+
+CHIKUSHI: What started with the fear of terrorism and is now being spurred on by the BSE [Bovine Spongiform Encephalopathy, or “mad cow disease”] panic is, simply put, insecurity. People feel insecure for a variety of reasons, of course, but the things I mentioned came completely out of the blue, so then everything else became scary too.
+
+MIYAZAKI: It’s a logical stage for a people with no sense of history to arrive at, because they’ve forgotten the obvious fact that good times are always followed by bad times. We might be paying a slightly high price to learn our lesson, but things’ll eventually work out. Of course, before they do, we’ll probably go through some rough times. We’ll probably be faced with all sorts of even more idiotic pickpockets and robbers.
+
+CHIKUSHI: When times are bad, it’s hard to think of those times as “interesting.” When people don’t have enough energy to do so, it accelerates a trend toward insecurity and an increase in stupid thieves.
+
+MIYAZAKI: I really wonder what will happen thirty years down the road. One thing the newspapers never talk about is what the world will be like when the ten-year-olds like Chihiro turn forty. All the economists and economic journalists ever think about are the numbers right in front of them and whether those numbers are going up or down. And reporters on politics only talk about the immediate political situation. That’s because when we’re facing the end of civilization, reporters are in unknown territory. And just when we’re talking about how it all might happen, Boom! on 9 /11 those planes crashed into the World Trade Center. When that happened, I honestly thought then that this was the start of something new. Not that it was good or bad but simply that it was the start of something.
+
+CHIKUSHI: The “slow food” movement is spreading now, but it’s not just about slow food; it’s about slowing down the pace of everything. A movement declared in some little town in Italy is now gradually spreading throughout Europe, to maybe about twenty-one places, and in those towns they do everything at a slow pace. In other words they’ve deliberately decided not to advance the clock, and to go slow. It’s as though they’re telling other people, “If you want to really relax, come visit our towns on your holiday.” They’re declaring that they will not be part of the rat race. As the antithesis of big city life, I think this movement probably also has a bright economic future.
+
+MIYAZAKI: But no matter how big I talk about these things, if a personal friend were to become sick or lose his or her job, I’d still feel helpless. I’d be beside myself. Here I am, helpless in an ordinary, daily sense, but at the same time this weird thing, this mass consumption civilization, has finally begun to move toward its demise. At Ghibli, several guys on the staff buy piles of sixty-five-yen hamburgers and go on hamburger binges. They do it as a joke. But they don’t do it in a leisurely fashion; it’s like they’re rushing to kill themselves.
+
+Here’s another example. Someone suggested buying a ranch. I said I wouldn’t have a clue what to do with a ranch if I bought one, but I went to see it anyway. The original owner had no desire to be in business any longer, and the beef cattle hooves had grown so long …
+
+CHIKUSHI: You mean they hadn’t trimmed the hooves, right?
+
+MIYAZAKI: Right. It was awful. It occurred to me that these cattle had never once in their lives been outside in the fields absentmindedly munching on grass. They’d just been tethered inside their barn stalls, forced to eat the feed mixture they were supplied, and then they were turned into meat. I’m sure there’ll be cosmic payback for this someday.
+
+CHIKUSHI: One thing you wrote about Spirited Away that really shocked me was when you said that “if you say No! you’ll be turned into a chicken and have to go on laying eggs until you’re eaten.” Now, that’s really cosmic retribution. Of course, in the film the parents are turned into pigs …
+
+MIYAZAKI: Recently, my friends and I use the word asamashii [despicable or disgraceful] a lot. It’s a word that’s fallen out of favor these days, but it seems perfectly suited to describe the current Japan. It originally referred to things that should have been the most embarrassing and shameful of all.
+
+CHIKUSHI: There’s a problem with language in Spirited Away, isn’t there? Some of the key words for the young heroine are simple, such as when she declares repeatedly, “I’ll keep working here.” I watched this section, thinking that you were trying to tell us how much power words have.
+
+MIYAZAKI: Actually, we thought about having Yubaba use an actual labor contract of some sort there, but since no one would get it even if we included an explanation, we just left it with her saying, “We’re using a boring old oath.” But there is a labor agreement in effect in her world because she has to give work to those who want it. Because that’s the kind of society Japan originally was; people had to give work to those who wanted it. To want to work is to want to live. To live in a specific place.
+
+We skipped all the explanations. The same with the fact that Yubaba and Zeniba are really the same person. I’m that way too. I’m a completely different person when I’m at Ghibli, when I’m at home, and when I’m out and about in the community. In fact, I live in a most schizoid fashion. I was worried about how children would accept this aspect of the movie, but they seem to have accepted it with no problem at all, so I’ve been greatly relieved.
+
+CHIKUSHI: In a more moralistic world where there’s nothing but good and evil, there’s certainly no rule that says one has to respect those who say they want to live. Because in such a world, evil characters are simply killed off. That’s probably why, after watching films of that sort, everyone comes out of theaters feeling happy, because they all agree with what they’ve seen.
+
+And by the way, the person working with Kamaji in the boiler room, who appears in the beginning …
+
+MIYAZAKI: You mean the girl Lin?
+
+CHIKUSHI: Yes, in the beginning Lin seems to be a very mean and standoffish person, but then she suddenly winds up showing her humanity, right? I imagine that everyone enjoys seeing that process because it’s different from the stereotypical character development we normally see.
+
+MIYAZAKI: But that’s the way it is in the workplace.
+
+CHIKUSHI: And in most human relationships.
+
+MIYAZAKI: Right. At Studio Ghibli, I never go out of my way to help someone unless I think there’s some benefit in doing so. I’m sure it’s true of folks in the editorial offices of Shūkan Kinyōbi [Weekly Friday, the magazine in which this interview was originally published]. Right? [laughs] But on the other hand, if I think someone’s really giving it their all, why, then I’ll really go out of my way to help or teach them, even if they’re totally off the wall in many ways. Actually, I feel like I’ve made a movie about the inner workings of Studio Ghibli itself. There’s great material to work with all over the place.
+
+I read in a short story by the British writer Robert Westall that during World War II when a new pilot would join a unit, those who had already been in it for some time often would go out of their way not to befriend him. It was because the newcomers were usually the first ones to be killed in dogfights, and the veteran flyers simply couldn’t afford to be friends with all of them. They would therefore only befriend those they thought might survive.
+
+The courage to accept a challenge
+
+CHIKUSHI: Every time I meet you, Miyazaki-san, you always say you’re never going to make any more films, but you also always seem to be talking about the next one.
+
+MIYAZAKI: Well, even if I did decide to make another, it wouldn’t be finished until the summer of 2004. And frankly I get quite a thrill out of imagining what the world will be like in three years. Will there even be movie theaters? It’s not just the economy. Nobody thinks the world will continue as is with the problems it has, including our political and ecological issues. When I think of how the lives of children in the future might differ from today, I hate to say it, but I think it’ll be even tougher for them.
+
+The trend has been accelerated by the passenger planes that recently crashed into the Twin Towers. In other words, they’ve forced us to confront our problems. If I’m going to create a new film for audiences three years in the future, I have to start thinking about what I’m going to make now. But we have to be entertainers. And here we’ve been presented with these incredible problems. For me, the issue is whether or not to take up the challenge. It’s not just something that I can decide entirely on my own, because the problems are being forced on us by the era in which we live, so I either have to seize the opportunity or step down. I don’t really know if a new film’s possible, or if I can even complete it, but it seems to me that the courageous thing to do would be to take up the challenge. Of course, I do worry that this all sounds a bit too heroic.
+
+CHIKUSHI: At the press conference, when you revealed that you would indeed be making a new film, I noted that you used the word kongenteki, or “fundamental,” multiple times.
+
+MIYAZAKI: I don’t know if “fundamental” is the right word or not, but I do think that several basic issues will become clearer as we go forward. What it means to be alive, what family means, what it means to eat, and what it means to own things. And I think we’re entering an age where we’ll also be asked what it means to make things. We’ll be forced to think about these things because the world’s not working right. I don’t want to make films that are behind the times. At the same time, I want to make films that viewers find truly interesting. Films that’ll make people feel a little more relaxed or make them feel good for about three days. I also want to make films that ten-year-old girls can see and then, when they become mothers, will want their ten-year-old daughters to see. I want to create films that both generations can watch together and love.
+
+That also means I can’t afford to create films that follow the fashion of the moment. I was beside myself when some people—who were so moved by the actions of the New York City firemen—begged me to make a film about that subject. But that’s not the kind of film I’m talking about. When the whole world seems to be talking about going to war, we’ve got to make films about something totally different. That’s what I believe. When everyone’s going on and on about how peaceful the world is, well, that’s when we’ve got to make films that show people there are always traps awaiting us, no matter how peaceful things seem to be.
+
+CHIKUSHI: What you’re talking about is clearly difficult, but nonetheless fascinating.
+
+Tetsuya Chikushi Born 1935 in Ōita Prefecture. Journalist. Newscaster. Graduate of Waseda University, Department of Political Science and Economics. Joined the Asahi Newspaper as a reporter in 1959. After a stint at a branch office, he worked as a journalist in the political section of the Tokyo headquarters as a special correspondent in Okinawa when it was controlled by the US military, as a foreign correspondent in the Washington D.C. bureau, as the vice director of the overseas news bureau, and as the managing editor of the weekly Asahi Journal, and also as a member of the editorial council. In 1989, he left the Asahi Journal, and from October of that year until March of 2000 he worked at TBS as the anchor on Chikushi Tetsuya’s News 23. He has received numerous awards, including the Galaxy Award and an International Emmy (Award of Merit). Among his books are Newscaster (Shūeisha Shinsho), Tabi no tochū meguriatta hitobito (People Met in the Course of Travels, 1959–2005), Surō raifu: kankyū jizai no susume (Slow Life: In Praise of Moderating our Pace) (Iwanami Shoten), Tairon: Chikushi Tetsuya “News 23” kono kuni no sugata (A debate: Tetsuya Chikushi “News 23” and the State of this Country) (Shūeisha). Deceased in 2008.

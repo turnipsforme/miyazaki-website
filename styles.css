@@ -271,7 +271,13 @@ main { display: block; padding-bottom: 3rem; }
 }
 
 /* feature-film entries ("windows"): plain stacked editorial treatment */
-.window, .window-hero { display: block; }
+.event.window, .event.window-hero { padding-inline: 1.25rem; }
+.window, .window-hero { display: flow-root; }
+.window-body { padding-block: 0.4rem 1.25rem; }
+.window-body .year { margin-bottom: 0.55rem; }
+.window-body h3 { margin-bottom: 0.7rem; }
+.window-body > p:not(.meta) { margin-bottom: 1rem; }
+.window-body .meta { margin-top: 0.9rem; }
 .poster { margin: 0 0 .9rem; max-width: 240px; }
 .window-year {
   font: 42px/1.05 var(--serif);
@@ -715,10 +721,306 @@ main a:not(.src):not(.return-link):hover { text-decoration: underline; color: va
   .window .poster, .window-hero .poster { max-width: 220px; }
   .margin-quote { margin-top: 0; margin-bottom: 1.25rem; }
   footer, .closing { padding-bottom: 5rem; }  /* clear the mobile strip */
+
+  /* document windows stay readable without becoming over-inset */
+  .event.window { padding-inline: 1rem; }
+  .window-body { padding-block: 0.25rem 1rem; }
 }
 
 /* ---------- 14. Accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
+  .article-window { transform: none !important; }
+}
+
+/* ---------- 15. Article windows (document teasers) ---------- */
+/* A small discovered-document module sitting inside the chronology.
+   Borrows the site palette and typography; deliberately not a card system. */
+.article-window-row { margin-bottom: var(--space-entry); }
+
+.article-window {
+  display: block;
+  max-width: 34rem;
+  padding: 0.8rem 1rem 0.9rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: 2px 2px 0 rgba(32, 40, 48, 0.05);
+  text-decoration: none !important;
+  color: var(--ink);
+  transition: border-color 180ms ease, box-shadow 180ms ease,
+              background-color 180ms ease, transform 180ms ease;
+}
+
+.article-window-kicker {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.article-window-title {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.article-window-excerpt {
+  display: block;
+  max-width: 48ch;
+  margin-top: 0.45rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.article-window-action {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+/* hover/focus is only an affordance — opening happens on click/tap */
+.article-window:hover,
+.article-window:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 3px 3px 0 rgba(32, 40, 48, 0.08);
+  outline-offset: 3px;
+}
+.article-window:hover .article-window-title,
+.article-window:focus-visible .article-window-title {
+  color: var(--blue-dark);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 1px;
+}
+@media (hover: hover) {
+  .article-window:hover { transform: translateY(-1px); }
+}
+
+/* ---------- 16. The floating reading window ---------- */
+.article-dialog {
+  width: min(880px, calc(100vw - 2rem));
+  height: min(86vh, 900px);
+  max-height: calc(100vh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--page);
+  color: var(--ink);
+  overflow: hidden;
+  box-shadow: 4px 5px 0 rgba(32, 40, 48, 0.12);
+}
+
+.article-dialog::backdrop {
+  background: rgba(30, 40, 50, 0.18);
+}
+
+.article-dialog-frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.article-dialog-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding-inline: 0.9rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.article-dialog-heading {
+  min-width: 0;
+}
+
+.article-dialog-kicker {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.article-dialog-title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.article-dialog-close {
+  flex: 0 0 auto;
+  min-width: 34px;
+  min-height: 34px;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+.article-dialog-close:hover,
+.article-dialog-close:focus-visible {
+  color: var(--ink);
+  border-color: var(--muted);
+}
+
+.article-frame {
+  display: block;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  border: 0;
+  background: var(--white);
+}
+
+@media (max-width: 719.98px) {
+  .article-dialog {
+    width: calc(100vw - 1rem);
+    height: calc(100vh - 1rem);
+    max-height: none;
+    margin: 0.5rem;
+  }
+  .article-dialog-bar { min-height: 42px; padding-inline: 0.65rem; }
+  .article-dialog-close { min-width: 40px; min-height: 40px; }
+}
+
+/* ---------- 17. Standalone article pages ---------- */
+.article-page {
+  background: var(--page);
+}
+
+.article-document {
+  min-height: 100vh;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.article-document-header {
+  max-width: 68ch;
+  margin: 0 auto 2rem;
+}
+
+.article-document-kicker {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.6rem;
+}
+
+.article-document-title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  line-height: 1.25;
+  margin-top: 0.8rem;
+}
+
+.article-document-byline {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 0.55rem;
+}
+
+.article-document-source {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin-top: 0.9rem;
+  word-break: break-word;
+}
+
+.article-document-body {
+  max-width: 68ch;
+  margin-inline: auto;
+  font-size: 16.5px;
+}
+
+.article-document-body p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.article-document-body h2 {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin: 2.25rem 0 0.75rem;
+}
+
+.article-document-body h3 {
+  font-size: 1rem;
+  margin: 1.75rem 0 0.6rem;
+}
+
+.article-document-body blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border);
+  font-style: italic;
+}
+
+.article-document-body ul, .article-document-body ol {
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+  line-height: 1.6;
+}
+
+.article-document-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article-document-body figure {
+  margin: 1.5rem 0;
+}
+
+.article-document-body figcaption {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+.article-document-body hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.article-document-body table {
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.article-document-footer {
+  max-width: 68ch;
+  margin: 2.5rem auto 0;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
 }

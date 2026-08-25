@@ -1,0 +1,20 @@
+{% comment %}
+  Reusable article-window teaser.
+  Usage: {% include article-windows.html year="2002" %}
+  Renders one small document teaser per article whose timeline_year matches.
+  Renders nothing when no articles exist for the year.
+{% endcomment %}
+
+{% assign year_articles = site.articles | where: "timeline_year", include.year | sort: "date" %}
+{% for article in year_articles %}
+<article class="article-window-row">
+  <a class="article-window" href="{{ article.url | relative_url }}"
+     data-article-url="{{ article.url | relative_url }}"
+     data-article-title="{{ article.title }}">
+    <span class="article-window-kicker">Document · {{ include.year }}</span>
+    <span class="article-window-title">{{ article.title }}</span>
+    {% if article.excerpt %}<span class="article-window-excerpt">{{ article.excerpt }}</span>{% endif %}
+    <span class="article-window-action">Read document →</span>
+  </a>
+</article>
+{% endfor %}
