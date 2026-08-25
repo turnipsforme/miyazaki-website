@@ -435,9 +435,9 @@ figcaption {
   align-items: center;
   justify-content: flex-end;
   gap: .45rem;
-  min-width: 3.4rem;              /* generous hit target beyond the visible mark */
+  min-width: 2.5rem;              /* hover zone extends half as far left — activates later */
   min-height: 1.55rem;
-  padding: .12rem 0 .12rem 1.25rem;
+  padding: .12rem 0 .12rem .6rem;
   text-decoration: none;
   outline-offset: 2px;
 }
