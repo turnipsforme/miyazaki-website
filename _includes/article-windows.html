@@ -1,20 +1,52 @@
 {% comment %}
   Reusable article-window teaser.
-  Usage: {% include article-windows.html year="2002" %}
+  Usage: {% raw %}{% include article-windows.html year="2002" %}{% endraw %}
   Renders one small document teaser per article whose timeline_year matches.
+  The card header reuses the article's own FIRST <img> (from its rendered
+  body) when present; articles without images simply start at the kicker.
+  No manual hero_image metadata is required or used.
   Renders nothing when no articles exist for the year.
 {% endcomment %}
 
 {% assign year_articles = site.articles | where: "timeline_year", include.year | sort: "date" %}
 {% for article in year_articles %}
+
+  {% assign first_image_src = nil %}
+  {% assign image_parts = article.content | split: '<img' %}
+
+  {% if image_parts.size > 1 %}
+    {% assign first_image_tag = image_parts[1] | split: '>' | first %}
+
+    {% if first_image_tag contains 'src="' %}
+      {% assign first_image_src = first_image_tag | split: 'src="' | last | split: '"' | first %}
+    {% elsif first_image_tag contains "src='" %}
+      {% assign first_image_src = first_image_tag | split: "src='" | last | split: "'" | first %}
+    {% endif %}
+  {% endif %}
+
 <article class="article-window-row">
-  <a class="article-window" href="{{ article.url | relative_url }}"
+  <a class="article-window"
+     href="{{ article.url | relative_url }}"
      data-article-url="{{ article.url | relative_url }}"
      data-article-title="{{ article.title }}">
-    <span class="article-window-kicker">Document · {{ include.year }}</span>
-    <span class="article-window-title">{{ article.title }}</span>
-    {% if article.excerpt %}<span class="article-window-excerpt">{{ article.excerpt }}</span>{% endif %}
-    <span class="article-window-action">Read document →</span>
+
+    {% if first_image_src %}
+      <span class="article-window-image-wrap">
+        <img
+          class="article-window-image"
+          src="{{ first_image_src }}"
+          alt=""
+          loading="lazy">
+      </span>
+    {% endif %}
+
+    <span class="article-window-content">
+      <span class="article-window-kicker">Document · {{ include.year }}</span>
+      <span class="article-window-title">{{ article.title }}</span>
+      {% if article.excerpt %}<span class="article-window-excerpt">{{ article.excerpt }}</span>{% endif %}
+      <span class="article-window-action">Read document →</span>
+    </span>
   </a>
 </article>
+
 {% endfor %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Tokyo I Love — Hayao Miyazaki, Documents</title>
+<meta name="description" content="Miyazaki's Sankei newspaper essay on the Tokyo he loves.">
+<link rel="stylesheet" href="/miyazaki-website/styles.css?v=2.5">
+</head>
+
+<body class="article-page">
+<div class="article-progress"
+     role="progressbar"
+     aria-label="Article reading progress"
+     aria-valuemin="0"
+     aria-valuemax="100"
+     aria-valuenow="0">
+  <span class="article-progress-fill"></span>
+</div>
+<script>
+(function () {
+  var progress = document.querySelector('.article-progress');
+  var fill = document.querySelector('.article-progress-fill');
+
+  if (!progress || !fill) return;
+
+  var scroller = document.scrollingElement || document.documentElement;
+
+  function updateProgress() {
+    var maxScroll = Math.max(
+      0,
+      scroller.scrollHeight - scroller.clientHeight
+    );
+    var ratio = maxScroll ? scroller.scrollTop / maxScroll : 0;
+    ratio = Math.max(0, Math.min(1, ratio));
+
+    fill.style.transform = 'scaleY(' + ratio + ')';
+    progress.setAttribute('aria-valuenow', String(Math.round(ratio * 100)));
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+
+  updateProgress();
+})();
+</script>
+<main class="article-document">
+  <header class="article-document-header">
+    <p class="article-document-kicker">Document · 1992</p>
+
+    <h1 class="article-document-title">The Tokyo I Love</h1>
+
+    <p class="article-document-byline">
+      Hayao Miyazaki
+       · <time datetime="1992-09-19">19 September 1992</time>
+      <br><em>The Sankei newspaper, September 19, 1992</em>
+       · from Starting Point: 1979–1996, Hayao Miyazaki (VIZ Media, 2009)
+    </p>
+
+    
+  </header>
+
+  <div class="article-document-body">
+    <p>If I choose a time when few people are out and about, and I walk through back lanes where there are few passersby, it is often hard to believe that I am in the midst of metropolitan Tokyo. And I am astonished by the fact that a deep evergreen broadleaf forest could have been planted here during the Taishō era,30 from trees donated by people throughout Japan. It’s a fine example of how a forest can be created in a short time, provided people have the will to do so.</p>
+
+  </div>
+
+  <footer class="article-document-footer">
+    <a class="return-link" href="/miyazaki-website/">← Back to the chronology</a>
+  </footer>
+</main>
+</body>
+</html>

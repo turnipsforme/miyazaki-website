@@ -7,6 +7,11 @@ highlighter: rouge
 
 permalink: pretty
 
+# raw source clippings and repo docs are not site content — never publish them
+exclude:
+  - articles
+  - ARTICLE_WINDOWS.md
+
 collections:
   articles:
     output: true
