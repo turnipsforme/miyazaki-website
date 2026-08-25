@@ -669,6 +669,10 @@ main a:not(.src):not(.return-link):hover { text-decoration: underline; color: va
   .margin-art img { width: 100%; }
   .margin-art { margin-bottom: 1.25rem; }
   .margin-art.wide { grid-column: 2 / 4; }
+  /* the largest editorial images no longer fill both columns: centred,
+     aspect ratio intact, uncropped — roughly 70% of the old footprint.
+     Narrower margin-art and poster thumbnails are untouched. */
+  .margin-art.wide { max-width: 680px; margin-inline: auto; }
 
   .year-index { display: block; width: calc(var(--index-col) + var(--column-gap)); }
   .mobile-bar, .mobile-panel { display: none !important; }

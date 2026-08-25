@@ -81,6 +81,96 @@
   }
 })();
 
+/* Chapter age rail: the large Age number ticks through each chapter,
+   driven by continuous scroll position rather than chapter entry alone.
+   Ranges are read from the DOM (.chapter-age .age-number) — never
+   hard-coded — so the effect follows the chronology wherever it changes.
+   A chapter displays [start, nextStart - 1]; the moment the next chapter
+   crosses the reading line it takes over with its own starting age.
+   Updates are rAF-throttled; only the active chapter's number is touched.
+   Without JavaScript every rail simply shows its static starting age. */
+(function () {
+  'use strict';
+
+  var sections = Array.prototype.slice.call(
+    document.querySelectorAll('section.chapter'));
+  var chapters = [];
+  sections.forEach(function (section) {
+    var numEl = section.querySelector('.chapter-age .age-number');
+    if (!numEl) return;
+    var start = parseInt(numEl.textContent, 10);
+    if (isNaN(start)) return;
+    chapters.push({ el: section, numEl: numEl, start: start, top: 0 });
+  });
+  /* bound each chapter by the NEXT chapter's starting age, dynamically */
+  chapters.forEach(function (ch, i) {
+    ch.nextStart = (i + 1 < chapters.length) ? chapters[i + 1].start : null;
+  });
+  if (chapters.length < 2) return;
+
+  var ticking = false;
+  var lastDocHeight = -1;
+
+  /* explicit numeric fallback — avoids `0 || undefined` NaN traps */
+  function scrollPos() {
+    if (typeof window.scrollY === 'number') return window.scrollY;
+    if (typeof window.pageYOffset === 'number') return window.pageYOffset;
+    return document.documentElement.scrollTop || 0;
+  }
+
+  function measure() {
+    var y = scrollPos();
+    chapters.forEach(function (ch) {
+      ch.top = ch.el.getBoundingClientRect().top + y;
+    });
+    lastDocHeight = document.documentElement.scrollHeight;
+  }
+
+  function update() {
+    ticking = false;
+
+    /* lazy-loaded images can change layout; re-measure if the page grew */
+    var docHeight = document.documentElement.scrollHeight;
+    if (docHeight !== lastDocHeight) measure();
+
+    /* same reading line as the year-index scrollspy (35% of viewport) */
+    var readingLine = scrollPos() + window.innerHeight * 0.35;
+
+    var idx = 0;
+    for (var i = 0; i < chapters.length; i++) {
+      if (readingLine >= chapters[i].top) idx = i; else break;
+    }
+
+    var ch = chapters[idx];
+    var display = ch.start;
+    if (ch.nextStart !== null) {
+      var span = chapters[idx + 1].top - ch.top;
+      var progress = span > 0 ? (readingLine - ch.top) / span : 1;
+      progress = Math.min(1, Math.max(0, progress));
+      display = ch.start + Math.floor(progress * (ch.nextStart - ch.start));
+      /* never reach the next chapter's starting age inside this chapter */
+      if (display > ch.nextStart - 1) display = ch.nextStart - 1;
+    } /* last chapter: no successor, stays at its starting age */
+
+    var text = String(display);
+    if (ch.numEl.textContent !== text) ch.numEl.textContent = text;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+  window.addEventListener('resize', function () { measure(); requestTick(); });
+  window.addEventListener('load', function () { measure(); requestTick(); });
+
+  measure();
+  requestTick();
+})();
+
 /* Escape closes the mobile index panel. */
 (function () {
   var toggle = document.getElementById('mi-toggle');
