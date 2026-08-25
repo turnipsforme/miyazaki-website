@@ -1,94 +1,70 @@
-/* Pinned age marker — vanilla JS, no dependencies.
-   Interpolates Miyazaki's age from the timeline events as you scroll,
-   and eases the displayed number so it ticks up satisfyingly. */
+/* Year index scrollspy + mobile strip label — vanilla JS, no dependencies.
+   The active entry is whichever chronology event occupies the reading zone
+   (upper-middle of the viewport), determined by IntersectionObserver rather
+   than per-frame inspection. State is exposed via aria-current, never by
+   colour alone. */
 (function () {
   'use strict';
 
-  var BORN = 1941 + 4 / 365; // born Jan 5, 1941
-  var marker = document.getElementById('age-marker');
-  var ageEl = document.getElementById('am-age');
-  var yearEl = document.getElementById('am-year');
-  if (!marker || !ageEl) return;
+  var events = Array.prototype.slice.call(document.querySelectorAll('.event[data-year]'));
+  var indexLinks = Array.prototype.slice.call(
+    document.querySelectorAll('.year-index a[data-year]'));
 
-  var points = [];        // [{y, year}] sorted by y
-  var dispAge = null;     // eased displayed age
-  var lastShownAge = '';
-  var lastShownYear = '';
-  var started = false;
+  /* link lookup: greatest index year <= the active event's year */
+  var years = indexLinks.map(function (a) { return parseInt(a.dataset.year, 10); });
 
-  function collect() {
-    points.length = 0;
-    var events = document.querySelectorAll('.event');
-    var scrollY = window.scrollY;
-    events.forEach(function (el) {
-      var t = el.querySelector('time[datetime]');
-      if (!t) return;
-      var y = parseInt(t.getAttribute('datetime').slice(0, 4), 10);
-      if (isNaN(y)) return;
-      var top = el.getBoundingClientRect().top + scrollY;
-      if (!points.length || top > points[points.length - 1].y + 8) {
-        points.push({ y: top, year: y });
+  function linkForYear(y) {
+    var best = null;
+    for (var i = 0; i < indexLinks.length; i++) {
+      if (years[i] <= y && (best === null || years[i] > years[best])) best = i;
+    }
+    if (best === null) return years.length ? 0 : null;
+    return best;
+  }
+
+  var currentIdx = -1;
+
+  function setActive(idx) {
+    if (idx === currentIdx || idx === null) return;
+    currentIdx = idx;
+    indexLinks.forEach(function (a, i) {
+      var active = i === idx;
+      a.classList.toggle('is-active', active);
+      a.classList.toggle('is-nearby', !active && Math.abs(i - idx) === 1);
+      if (active) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+    /* mirror state into the mobile strip + panel */
+    var yrEl = indexLinks[idx].querySelector('.yi-yr');
+    var lbEl = indexLinks[idx].querySelector('.yi-label');
+    var mbYear = document.getElementById('mb-year');
+    var mbTitle = document.getElementById('mb-title');
+    if (mbYear && yrEl) mbYear.textContent = yrEl.textContent;
+    if (mbTitle && lbEl) mbTitle.textContent = lbEl.textContent;
+    document.querySelectorAll('.mobile-panel a[href^="#"]').forEach(function (a) {
+      if (a.getAttribute('href') === indexLinks[idx].getAttribute('href')) {
+        a.setAttribute('aria-current', 'true');
+      } else {
+        a.removeAttribute('aria-current');
       }
     });
   }
 
-  function targetAt(centerY) {
-    if (!points.length) return null;
-    /* never extrapolate before the first event — hold at it instead */
-    if (centerY <= points[0].y) {
-      return { year: points[0].year };
-    }
-    var last = points[points.length - 1];
-    if (centerY >= last.y) {
-      return { year: last.year + (centerY - last.y) / 600 };
-    }
-    for (var i = 1; i < points.length; i++) {
-      var a = points[i - 1], b = points[i];
-      if (centerY <= b.y) {
-        var f = (centerY - a.y) / Math.max(1, b.y - a.y);
-        return { year: a.year + f * (b.year - a.year) };
-      }
-    }
-    return { year: last.year };
+  function readingDistance(entry) {
+    return Math.abs(entry.boundingClientRect.top - window.innerHeight * 0.35);
   }
 
-  function frame() {
-    if (!points.length) return;
-    var center = window.scrollY + window.innerHeight * 0.45;
-    var t = targetAt(center);
-    if (t !== null) {
-      /* only show the marker once the reader reaches the first event */
-      var atFirst = center >= points[0].y - 40;
-      marker.classList.toggle('is-visible', atFirst);
-      if (atFirst) {
-        var targetAge = t.year - BORN;
-        if (dispAge === null) dispAge = targetAge;
-        dispAge += (targetAge - dispAge) * 0.18; // ease toward scroll position
-        if (Math.abs(targetAge - dispAge) < 0.002) dispAge = targetAge;
+  var observer = new IntersectionObserver(function (observedEntries) {
+    var visible = observedEntries
+      .filter(function (entry) { return entry.isIntersecting; })
+      .sort(function (a, b) { return readingDistance(a) - readingDistance(b); });
+    if (!visible.length) return;
+    var year = parseInt(visible[0].target.dataset.year, 10);
+    setActive(linkForYear(year));
+  }, { rootMargin: '-25% 0px -45% 0px', threshold: 0 });
 
-        var a = Math.floor(dispAge).toString();
-        if (a !== lastShownAge) { ageEl.textContent = a; lastShownAge = a; }
-        var yr = Math.floor(t.year).toString();
-        if (yr !== lastShownYear && yr.length === 4) { yearEl.textContent = yr; lastShownYear = yr; }
-      }
-    }
-    requestAnimationFrame(frame);
-  }
+  events.forEach(function (el) { observer.observe(el); });
 
-  function start() {
-    if (started) return;
-    started = true;
-    collect();
-    requestAnimationFrame(frame);
-  }
-
-  window.addEventListener('resize', collect);
-  window.addEventListener('load', collect);
-  document.addEventListener('DOMContentLoaded', collect);
-  // lazy-loaded images shift layout — re-measure when the document resizes
-  if ('ResizeObserver' in window) {
-    var ro = new ResizeObserver(function () { collect(); });
-    ro.observe(document.body);
-  }
-  start();
+  /* initial state: first chapter is active before any intersection fires */
+  window.addEventListener('load', function () { setActive(0); });
 })();

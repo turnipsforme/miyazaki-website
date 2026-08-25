@@ -1,10 +1,12 @@
 /* ==========================================================================
-   Hayao Miyazaki — A Chronology  ·  v1.1
+   Hayao Miyazaki — A Chronology  ·  v2.0
    Design: clean personal blog, ca. 2012–2016. Strong white, bright web blue,
    cool gray, thin borders, serif headlines, small boxed margin notes.
-   (v1.0 cream/rust design preserved in archive/v1.0/ and git tag v1.0.)
-   1. tokens   2. base   3. header   4. layout   5. entries   6. notes & images
-   7. year index + age rail   8. filmography/closing/sources   9. mobile
+   Layout: real four-column desktop grid — AGE | CHRONOLOGY | NOTES | INDEX.
+   1. tokens   2. reset/base   3. page shell   4. header
+   5. desktop chronology grid   6. event typography   7. margin notes
+   8. age rail   9. year index   10. images   11. filmography/closing/sources
+   12. tablet   13. mobile   14. accessibility
    ========================================================================== */
 
 /* ---------- 1. Tokens ---------- */
@@ -18,21 +20,31 @@
   --blue-dark: #075A96;
   --blue-pale: #EAF4FC;
 
-  --w-chrono:    46rem;   /* main reading column (~720px) */
-  --gutter-note: 14.5rem; /* right gutter for margin notes */
-  --w-total:     78rem;   /* overall content width */
+  /* the four-column reading layout */
+  --age-col:    90px;
+  --main-col:   minmax(620px, 760px);
+  --notes-col:  210px;
+  --index-col:  70px;
+  --column-gap: 28px;
+
+  --page-w: min(calc(100% - 64px), 1220px);
+  --page-inset: max(32px, calc((100vw - 1220px) / 2)); /* gap either side of the sheet */
+
+  /* vertical rhythm: exactly three spacing levels */
+  --space-small:   12px;
+  --space-entry:   32px;
+  --space-chapter: 80px;
 
   --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* ---------- 2. Base ---------- */
+/* ---------- 2. Reset / base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: var(--page);
-  /* extremely subtle noise-free variation — pale blue-gray, not paper */
   background-image:
     repeating-linear-gradient(0deg,
       rgba(32,40,48,.018) 0px, rgba(32,40,48,.018) 1px,
@@ -44,30 +56,32 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 em { font-style: italic; }
-
 h1, h2, h3 { font-family: var(--serif); font-weight: normal; margin: 0; }
-
-section[id], article[id] { scroll-margin-top: 4.5rem; }
-
+section[id], article[id], div[id] { scroll-margin-top: 4.5rem; }
 a { color: var(--blue); }
 a:hover { color: var(--blue-dark); }
-
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 
-/* the whole chronology sits on one strong white surface */
+/* ---------- 3. Page shell ---------- */
 .page-surface {
-  max-width: calc(var(--w-total) + 6rem);
+  width: var(--page-w);
   margin: 2rem auto 0;
   background: var(--white);
   border: 1px solid var(--border);
 }
+main { display: block; padding-bottom: 3rem; }
 
-/* ---------- 3. Header (blog-style, gets to the information quickly) ---------- */
+/* sections below the grid (filmography, closing, sources) align to the
+   chronology column instead of inventing their own widths */
+.under-grid { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+/* ---------- 4. Header (wider than the chronology, still not a hero) ---------- */
 .site-head {
-  max-width: var(--w-chrono);
-  margin: 0 auto;
-  padding: clamp(2rem, 5vh, 3.5rem) 1.5rem 0;
+  width: min(calc(100% - 64px), 980px);
+  margin-inline: auto;
+  padding-top: clamp(2rem, 5vh, 3.5rem);
 }
+.site-intro { display: block; }
 .sh-kicker {
   font-size: .7rem;
   text-transform: uppercase;
@@ -86,8 +100,8 @@ a:hover { color: var(--blue-dark); }
   color: var(--muted);
   margin: .35rem 0 1rem;
 }
-.sh-desc { max-width: 58ch; margin: 0 0 1.25rem; }
-.sh-portrait { margin: 0 0 1.25rem; max-width: 320px; }
+.sh-desc { max-width: 58ch; margin: 0; }
+.sh-portrait { margin: 1.25rem 0 0; max-width: 320px; }
 .sh-portrait img { border: 1px solid var(--border); }
 .sh-portrait figcaption {
   font-size: .69rem;
@@ -95,10 +109,19 @@ a:hover { color: var(--blue-dark); }
   line-height: 1.45;
   padding-top: .35em;
 }
+@media (min-width: 900px) {
+  .site-intro {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 40px;
+    align-items: end;
+  }
+  .sh-portrait { margin: 0; max-width: none; }
+}
 .sh-rule {
   border: 0;
   border-top: 2px solid var(--blue);
-  margin: 0 0 .75rem;
+  margin: 1.75rem 0 .75rem;
   width: auto;
 }
 .sh-begin {
@@ -107,47 +130,59 @@ a:hover { color: var(--blue-dark); }
   text-transform: uppercase;
   letter-spacing: .18em;
   color: var(--blue);
-  margin: 0 0 2.5rem;
+  margin: 0;
 }
 
-/* ---------- 4. Layout ---------- */
-main { display: block; padding-bottom: 3rem; }
-
+/* ---------- 5. Desktop chronology grid ----------
+   Every chapter is the same four-column grid; every row shares it.
+   .chrono-row is display:contents so its children land directly on the
+   chapter grid — alignment is structural, not faked with margins. */
 .chapter {
-  max-width: var(--w-chrono);
-  margin: 0 auto;
-  padding: 2.25rem 1.5rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;             /* mobile: single column */
+  column-gap: var(--column-gap);
+  align-items: start;
+  padding: var(--space-chapter) 0 calc(1rem);
 }
-@media (min-width: 64rem) {
-  .chapter { padding-left: 6rem; }  /* room for the sticky age rail on the left */
-}
+.chapter + .chapter { border-top: 1px solid var(--border); }
 
-.chapter-head { margin-bottom: 1.75rem; }
+.chrono-row, .row-free { display: contents; }
+
+.chapter-head { display: contents; }
+.chapter-head > * { grid-column: 1; padding-inline: 1.5rem; }
+
+.age-rail        { grid-column: 1; }
+.event           { grid-column: 1; padding-inline: 1.5rem; }
+.row-poster      { grid-column: 1; padding-inline: 1.5rem; }
+.margin-quote,
+.margin-art      { grid-column: 1; padding-inline: 1.5rem; }
+.margin-art.wide { grid-column: 1; }
+
+.chapter-head > * { margin: 0; }
+.chapter-head .chapter-title + .chapter-range { margin-top: .15rem; }
 .chapter-range {
   font-size: .8rem;
   letter-spacing: .12em;
   color: var(--muted);
-  margin: 0;
 }
 .chapter-range time { font-family: var(--serif); font-size: 1rem; }
-.chapter-head h2 {
+.chapter-title {
   font-family: var(--sans);
   font-size: .82rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: .24em;
   color: var(--blue);
-  margin: .15rem 0 .4rem;
 }
 .chapter-intro {
   font-family: var(--serif);
   font-style: italic;
   color: var(--muted);
   font-size: .98rem;
-  margin: 0;
   max-width: 44rem;
+  margin-top: .4rem !important;
 }
-.chapter-head::after {
+.chapter-intro::after {
   content: "";
   display: block;
   width: 3.5rem;
@@ -155,30 +190,21 @@ main { display: block; padding-bottom: 3rem; }
   margin-top: 1rem;
 }
 
-/* occasional short horizontal rules between eras */
-.tone-b, .tone-c, .tone-d, .tone-accent, .tone-accent-end {
-  background: transparent; /* retired in v1.1 — kept as hooks so old markup is harmless */
-}
-.chapter + .chapter { border-top: 1px solid var(--border); }
-
-/* ---------- 5. Entries ---------- */
-.event { margin-bottom: 2rem; }
+/* ---------- 6. Event typography ---------- */
+.event { margin-bottom: var(--space-entry); }
 
 .event .year {
-  font-family: var(--serif);
-  font-size: 2.5rem;
-  line-height: 1.1;
+  font: 42px/1.05 var(--serif);
   color: var(--ink);
   margin-bottom: .1rem;
 }
 .event.minor .year { font-size: 1.55rem; }
-.event h3 { font-size: 1.6rem; line-height: 1.25; margin-bottom: .55rem; }
+.event h3 { font-size: 26px; line-height: 1.2; margin: 8px 0 12px; }
 .event.minor h3 { font-size: 1.15rem; }
 .event p { max-width: 62ch; }
 .event p:last-child { margin-bottom: 0; }
 .event.minor p { font-size: .96rem; }
 
-/* metadata line under the year */
 .age {
   display: inline-block;
   font-family: var(--sans);
@@ -199,7 +225,6 @@ main { display: block; padding-bottom: 3rem; }
   margin-top: .6em;
 }
 
-/* milestone marker: plain uppercase note, no pill/badge */
 .first-tag {
   display: inline-block;
   font-family: var(--sans);
@@ -207,22 +232,20 @@ main { display: block; padding-bottom: 3rem; }
   letter-spacing: .09em;
   text-transform: uppercase;
   color: var(--blue);
-  border: 0;
   margin-left: .7em;
   vertical-align: .3em;
   white-space: nowrap;
 }
-.event.first-role { position: relative; padding-left: 1.1rem; }
+.event.first-role { position: relative; padding-left: calc(1.5rem + 1.1rem); }
 .event.first-role::before {
   content: "";
   position: absolute;
-  left: 0; top: .45rem; bottom: .3rem;
+  left: 1.5rem; top: .45rem; bottom: .3rem;
   width: 2px;
   background: var(--blue);
 }
-.event.minor { border-left: 0; padding-left: 0; }
+.event.minor { border-left: 0; }
 
-/* cancelled projects */
 .fail h3::after {
   content: "cancelled";
   font-family: var(--sans);
@@ -234,34 +257,16 @@ main { display: block; padding-bottom: 3rem; }
   vertical-align: .15em;
 }
 
-/* feature-film entries ("windows"): simple stacked blog treatment */
-.window,
-.window-hero {
-  display: block;
-  border-left: 0;
-  padding-left: 0;
-}
+/* feature-film entries ("windows"): plain stacked editorial treatment */
+.window, .window-hero { display: block; }
 .poster { margin: 0 0 .9rem; max-width: 240px; }
-@media (min-width: 64rem) {
-  .window > .poster { float: right; margin: 0 0 1rem 1.75rem; }
-  .window::after { content: ""; display: table; clear: both; }
-}
-.poster img { border: 1px solid var(--border); }
-.poster img:hover { opacity: .95; }
-.window .year { font-size: 1.3rem; letter-spacing: .06em; }
-.window h3 { font-size: 1.7rem; }
-.window-hero > .poster { float: none; }
-.window-hero .poster { margin-bottom: .9rem; }
 .window-year {
-  font-family: var(--serif);
-  font-size: 2.5rem;
-  line-height: 1.1;
+  font: 42px/1.05 var(--serif);
   color: var(--ink);
   margin-bottom: .1rem;
 }
 .window-title { font-size: clamp(1.9rem, 4vw, 2.5rem); line-height: 1.1; margin: .2rem 0 .9rem; }
 
-/* pull quotes: blog style, thin blue rule on the left */
 blockquote {
   font-family: var(--serif);
   font-size: 1.22rem;
@@ -274,7 +279,7 @@ blockquote {
   color: var(--ink);
 }
 
-/* source citations [n] with hover tooltip — behaviour unchanged from v1.0 */
+/* source citations [n] with hover tooltip */
 .src {
   font-family: var(--sans);
   font-size: .72em;
@@ -287,7 +292,6 @@ blockquote {
 }
 .src:hover, .src:focus-visible { color: var(--blue-dark); }
 .src.light { color: var(--blue); }
-.src.demo { vertical-align: baseline; font-size: .85em; }
 .src::after {
   content: attr(data-url);
   position: absolute;
@@ -314,59 +318,19 @@ blockquote {
 .src:focus-visible::after {
   opacity: 1; visibility: visible; transform: none; pointer-events: auto;
 }
-@media (max-width: 63.99rem) {
-  .src::after { white-space: normal; max-width: 16rem; }
-}
 
-/* landing flash when jumping via the year index */
 @keyframes target-flash { from { background-color: rgba(0,119,204,.08); } to { background-color: transparent; } }
 .event:target, section[id]:target { animation: target-flash 1.4s ease-out both; }
 
-/* ---------- 6. Margin notes & images ---------- */
-
-/* images: plain blog figures, some offset right into the gutter on wide screens */
-.margin-art {
-  margin: 1.1rem 0 1.4rem;
-  max-width: 300px;
-}
-.margin-art img { border: 1px solid var(--border); }
-figcaption {
-  font-size: .69rem;
-  color: var(--muted);
-  line-height: 1.45;
-  padding-top: .35em;
-}
-@media (min-width: 80rem) {
-  .margin-art {
-    float: right;
-    width: min(230px, 26%);
-    margin: 0 -16rem 1rem 1.75rem;  /* out into the reserved note gutter */
-    clear: both;
-  }
-  .margin-art.wide { width: min(280px, 28%); }
-  main { overflow-x: clip; }
-}
-@media (min-width: 64rem) and (max-width: 79.99rem) {
-  .margin-art {
-    float: right;
-    width: min(220px, 30%);
-    margin: 0 0 1rem 1.5rem;
-    clear: both;
-  }
-  .chapter::after { content: ""; display: table; clear: both; }
-}
-
-/* margin notes: old-web information boxes.
-   HTML uses .margin-quote (the only note markup carried over from v1.0);
-   it renders as a bordered sidebar box with a blue top rule. */
+/* ---------- 7. Margin notes (sparse, positioned by the grid) ---------- */
 .margin-quote {
+  align-self: start;
+  margin-top: 2.5rem;
   background: var(--white);
   border: 1px solid var(--border);
   border-top: 3px solid var(--blue);
   box-shadow: 2px 2px 0 rgba(32,40,48,.05);
   padding: .85rem 1rem .9rem;
-  margin: 1.25rem 0;
-  max-width: 300px;
 }
 .margin-quote blockquote,
 .margin-quote p:first-child {
@@ -393,56 +357,67 @@ figcaption {
   padding: 0;
 }
 .margin-quote cite { font-style: normal; }
-@media (min-width: 80rem) {
-  .margin-quote {
-    float: right;
-    width: 13rem;
-    max-width: none;
-    margin: 0 -16rem 1.25rem 1.75rem;
-    clear: both;
-  }
+
+/* ---------- 8. Age rail (context — nothing else) ---------- */
+.age-rail {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+  justify-self: center;
+  text-align: center;
+  padding-top: .35rem;
+  pointer-events: none;
+  display: none;
 }
-@media (min-width: 64rem) and (max-width: 79.99rem) {
-  .margin-quote { float: right; width: min(240px, 30%); margin: 0 0 1.25rem 1.5rem; clear: both; }
+.age-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
-@media (max-width: 63.99rem) {
-  .margin-quote { max-width: none; }  /* inline box after its paragraph */
+.age-number {
+  display: block;
+  margin-top: .2rem;
+  font: 44px/1 var(--serif);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.age-year {
+  display: block;
+  margin-top: .4rem;
+  font-size: 11px;
+  color: var(--muted);
 }
 
-/* light-on-dark markup from v1.0 renders normally in v1.1 */
-.light-on-dark, .light-on-dark h3, .light-on-dark .year { color: inherit; }
-
-/* ---------- 7a. Year index (right rail) ---------- */
+/* ---------- 9. Year index (navigation, not content) ---------- */
 .year-index {
   position: fixed;
-  right: clamp(.75rem, 2.5vw, 2.5rem);
+  right: var(--page-inset);
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
   display: none;
 }
-@media (min-width: 64rem) { .year-index { display: block; } }
 .year-index ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: .15rem;
 }
 .year-index a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: .45rem;
-  min-width: 2.5rem;              /* hover zone extends half as far left — activates later */
-  min-height: 1.55rem;
-  padding: .12rem 0 .12rem .6rem;
+  min-height: 40px;               /* hit target larger than the visible tick */
+  padding-inline: 8px;
   text-decoration: none;
-  outline-offset: 2px;
+  outline-offset: -2px;
+  transition: color 160ms ease, opacity 160ms ease;
 }
 .yi-label {
-  order: 0;
   font-size: .68rem;
   letter-spacing: .04em;
   white-space: nowrap;
@@ -456,76 +431,201 @@ figcaption {
   pointer-events: none;
 }
 .yi-yr {
-  order: 1;
   font-family: var(--sans);
-  font-size: .76rem;
+  font-size: .78rem;
   letter-spacing: .03em;
   color: var(--ink);
-  opacity: .28;                    /* distant */
-  transition: opacity 180ms ease, color 180ms ease;
+  opacity: .3;                    /* distant */
+  transition: opacity 160ms ease, color 160ms ease;
   min-width: 1.7rem;
   text-align: right;
 }
 .yi-dot {
-  order: 2;
   width: 5px; height: 5px;
   flex: none;
   background: transparent;
-  transition: background-color 180ms ease;
+  transition: background-color 160ms ease;
 }
-/* nearby */
-.year-index a.is-near .yi-yr { opacity: .55; }
-/* current */
+.year-index a.is-nearby .yi-yr { opacity: .6; }
 .year-index a.is-active .yi-yr { opacity: 1; color: var(--blue); font-weight: bold; }
 .year-index a.is-active .yi-dot { background: var(--blue); }
 .year-index a.is-active .yi-label,
 .year-index a:hover .yi-label,
 .year-index a:focus-visible .yi-label { opacity: 1; transform: none; }
 
-/* ---------- 7b. Pinned age rail (left) ---------- */
-.age-marker {
-  position: fixed;
-  left: clamp(.75rem, 2.5vw, 2.25rem);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: .15rem;
-  font-variant-numeric: tabular-nums;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 400ms ease;
-}
-@media (min-width: 64rem) { .age-marker { display: flex; } }
-.age-marker.is-visible { opacity: 1; }
-.am-cap {
-  font-size: .62rem;
-  text-transform: uppercase;
-  letter-spacing: .22em;
+/* ---------- 10. Images ---------- */
+.margin-art { margin: 0 0 var(--space-small); }
+.margin-art img,
+.poster img { border: 1px solid var(--border); }
+figcaption {
+  font-size: .69rem;
   color: var(--muted);
+  line-height: 1.45;
+  padding-top: .35em;
 }
-.am-age {
-  font-family: var(--serif);
-  font-size: clamp(2.4rem, 3.4vw, 3rem);
-  line-height: 1;
-  color: var(--muted);
+.event .margin-art { max-width: 340px; margin-top: 1.1rem; } /* inline treatment */
+.poster img:hover { opacity: .95; }
+
+/* ---------- 11. Filmography, closing, sources, footer ---------- */
+.filmography {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
 }
-.am-age.is-active-age { color: var(--blue); }
-.am-year {
+.filmography h2 {
   font-family: var(--sans);
-  font-size: .7rem;
-  letter-spacing: .06em;
+  font-size: .82rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  color: var(--blue);
+  margin: 0;
+}
+.film-grid {
+  list-style: none;
+  margin: 1.25rem 0 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 1.1rem;
+  max-width: 740px;
+}
+.film-grid a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+.film-grid img {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+.film-grid a:hover img, .film-grid a:focus-visible img { border-color: var(--blue); }
+.fg-year {
+  margin-top: .45em;
+  font-size: .72rem;
+  letter-spacing: .08em;
   color: var(--muted);
 }
-.am-rule {
-  width: 1.6rem; height: 1px;
-  background: var(--border);
-  margin: .25rem 0;
+.fg-title { font-size: .74rem; line-height: 1.35; color: var(--ink); }
+
+.closing { padding-top: 2.5rem; text-align: left; }
+.closing-span {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+.closing-line { flex: 0 1 12rem; height: 1px; background: var(--border); }
+.closing-text { color: var(--muted); max-width: 30rem; margin: 0 0 2.25rem; }
+.end-mark {
+  font-size: .7rem;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.return-link {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+.return-link:hover, .return-link:focus-visible { color: var(--blue-dark); }
+
+.sources { padding-top: 1rem; padding-bottom: 2.5rem; font-size: .85rem; color: var(--muted); }
+.sources h2 { font-size: 1.2rem; color: var(--ink); margin-bottom: .5rem; }
+.sources ol { padding-left: 1.5rem; margin: 0 0 1.25rem; }
+.sources li { margin-bottom: .5em; }
+.sources-img { border-top: 1px solid var(--border); padding-top: 1.25rem; }
+code { font-size: .9em; background: var(--blue-pale); padding: 0 .3em; }
+
+footer {
+  border-top: 1px solid var(--border);
+  background: var(--white);
+  padding: 1.25rem 1.5rem 1.75rem;
+  font-size: .8rem;
+  color: var(--muted);
+}
+footer a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+
+main a:not(.src):not(.return-link) {
+  color: var(--blue);
+  text-decoration: none;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  overflow-wrap: anywhere;
+}
+main a:not(.src):not(.return-link):hover { text-decoration: underline; color: var(--blue-dark); }
+
+/* ---------- 12. Tablet: AGE | CONTENT ---------- */
+@media (min-width: 720px) {
+  .chapter {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+  .chapter-head > *,
+  .event, .row-poster,
+  .margin-quote, .margin-art, .margin-art.wide {
+    grid-column: 2;
+  }
+  .age-rail {
+    display: block;
+    grid-column: 1;
+    padding-left: .25rem;
+    text-align: left;
+  }
+  .event { padding-inline: 0 1.5rem; }
+  .chapter-head > * { padding-inline: 0 1.5rem; }
+  .row-poster, .margin-quote, .margin-art { padding-inline: 0; max-width: 420px; }
+  .event.first-role { padding-left: 1.1rem; }
+  .event.first-role::before { left: 0; }
+
+  .under-grid { padding-left: calc(64px + 28px + 1.5rem); padding-right: 1.5rem; }
+  footer .foot-inner { padding-left: 0; }
+
+  .window > .poster { float: right; margin: 0 0 1rem 1.75rem; }
+  .window::after { content: ""; display: table; clear: both; }
 }
 
-/* ---------- 7c. Mobile strip + panel ---------- */
+/* ---------- 13. Desktop: AGE | CHRONOLOGY | NOTES | INDEX ---------- */
+@media (min-width: 1180px) {
+  .chapter {
+    grid-template-columns:
+      var(--age-col)
+      var(--main-col)
+      var(--notes-col)
+      var(--index-col);
+  }
+  .age-rail { grid-column: 1; justify-self: center; text-align: center; padding-left: 0; }
+  .event, .row-poster { grid-column: 2; }
+  .chapter-head > * { grid-column: 2; padding-inline: 0; }
+  .event { padding-inline: 0; }
+  .event.first-role { padding-left: 1.1rem; }
+  .event.first-role::before { left: 0; }
+
+  .margin-quote, .margin-art { grid-column: 3; padding-inline: 0; max-width: none; }
+  .margin-quote { width: 100%; }
+  .margin-art img { width: 100%; }
+  .margin-art { margin-bottom: 1.25rem; }
+  .margin-art.wide { grid-column: 2 / 4; }
+
+  .year-index { display: block; width: calc(var(--index-col) + var(--column-gap)); }
+  .mobile-bar, .mobile-panel { display: none !important; }
+  section[id], article[id], div[id] { scroll-margin-top: 2rem; }
+
+  .under-grid {
+    padding-left: calc(var(--age-col) + var(--column-gap));
+    padding-right: calc(var(--notes-col) + var(--index-col) + 2 * var(--column-gap));
+  }
+}
+
+/* ---------- 13b. Mobile (<720px): CONTENT only ---------- */
 .mobile-bar {
   position: sticky;
   top: 0;
@@ -533,9 +633,7 @@ figcaption {
   background: var(--white);
   border-bottom: 1px solid var(--border);
   padding: .45rem .9rem;
-  display: block;
 }
-@media (min-width: 64rem) { .mobile-bar { display: none; } }
 .mobile-bar button {
   font-family: var(--sans);
   font-size: .8rem;
@@ -583,126 +681,19 @@ figcaption {
   min-width: 3.2rem;
 }
 .mobile-panel a:hover, .mobile-panel a[aria-current="true"] { color: var(--blue); }
-@media (min-width: 64rem) { .mobile-panel { display: none !important; } }
 
-/* ---------- 8. Filmography, closing, sources, footer ---------- */
-.filmography {
-  max-width: var(--w-chrono);
-  margin: 0 auto;
-  padding: 2rem 1.5rem 1.5rem;
-  border-bottom: 1px solid var(--border);
-}
-.film-grid {
-  list-style: none;
-  margin: 1.25rem 0 0; padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 1.1rem;
-}
-.film-grid a {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-}
-.film-grid img {
-  aspect-ratio: 2/3;
-  object-fit: cover;
-  width: 100%;
-  border: 1px solid var(--border);
-}
-.film-grid a:hover img, .film-grid a:focus-visible img { border-color: var(--blue); }
-.fg-year {
-  margin-top: .45em;
-  font-size: .72rem;
-  letter-spacing: .08em;
-  color: var(--muted);
-}
-.fg-title { font-size: .74rem; line-height: 1.35; color: var(--ink); }
-
-.closing {
-  max-width: var(--w-chrono);
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 1rem;
-  text-align: center;
-}
-.closing-span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  color: var(--muted);
-  margin-bottom: 1.25rem;
-}
-.closing-line { flex: 0 1 12rem; height: 1px; background: var(--border); }
-.closing-text { color: var(--muted); max-width: 30rem; margin: 0 auto 2.25rem; }
-.end-mark {
-  font-size: .7rem;
-  letter-spacing: .5em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-}
-.return-link {
-  font-family: var(--serif);
-  font-style: italic;
-  color: var(--blue);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-}
-.return-link:hover, .return-link:focus-visible { color: var(--blue-dark); }
-
-.sources {
-  max-width: var(--w-chrono);
-  margin: 0 auto;
-  padding: 1rem 1.5rem 2.5rem;
-  font-size: .85rem;
-  color: var(--muted);
-}
-.sources h2 { font-size: 1.2rem; color: var(--ink); margin-bottom: .5rem; }
-.sources ol { padding-left: 1.5rem; margin: 0 0 1.25rem; }
-.sources li { margin-bottom: .5em; }
-.sources-img { border-top: 1px solid var(--border); padding-top: 1.25rem; }
-code { font-size: .9em; background: var(--blue-pale); padding: 0 .3em; }
-
-footer {
-  border-top: 1px solid var(--border);
-  background: var(--white);
-  max-width: none;
-  padding: 1.25rem 1.5rem 1.75rem;
-  font-size: .8rem;
-  color: var(--muted);
-}
-footer .foot-inner { max-width: var(--w-chrono); margin: 0 auto; }
-footer a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
-
-/* generic body links: web-link blue, underline on hover */
-main a:not(.src):not(.return-link) {
-  color: var(--blue);
-  text-decoration: none;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  overflow-wrap: anywhere;
-}
-main a:not(.src):not(.return-link):hover { text-decoration: underline; color: var(--blue-dark); }
-
-/* ---------- 9. Mid-size / mobile adjustments ---------- */
-@media (min-width: 40rem) and (max-width: 63.99rem) {
-  .site-head, .chapter, .filmography, .closing, .sources { padding-left: 2.25rem; padding-right: 2.25rem; }
-  footer { padding-left: 2.25rem; padding-right: 2.25rem; }
-}
-@media (max-width: 63.99rem) {
+@media (max-width: 719.98px) {
   .page-surface { margin-top: 0; border-left: 0; border-right: 0; }
-  .window .poster, .window-hero .poster { float: none; max-width: 220px; }
-  .event .year { font-size: 2.1rem; }
-  .window-year { font-size: 2.1rem; }
+  .event .year { font-size: 34px; }
+  .window-year { font-size: 34px; }
+  .event h3 { font-size: 23px; }
+  .event p { font-size: 16px; line-height: 1.65; }
+  .window .poster, .window-hero .poster { max-width: 220px; }
+  .margin-quote { margin-top: 0; margin-bottom: 1.25rem; }
   footer, .closing { padding-bottom: 5rem; }  /* clear the mobile strip */
 }
 
-/* ---------- reduced motion ---------- */
+/* ---------- 14. Accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
