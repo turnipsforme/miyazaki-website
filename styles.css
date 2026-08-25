@@ -365,6 +365,45 @@ details[open] summary { margin-bottom: .4em; }
   main { overflow-x: clip; }
   .margin-art.wide { width: min(280px, 26%); }
 }
+
+/* margin quotes: float beside the text exactly like margin-art */
+.margin-quote {
+  margin: var(--space-md) 0;
+  max-width: 300px;
+}
+.margin-quote blockquote,
+.margin-quote p:first-child {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-style: italic;
+  line-height: 1.45;
+  border-left: 2px solid var(--accent);
+  padding-left: .9rem;
+  margin: 0;
+  max-width: none;
+}
+.quote-attr {
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: var(--muted);
+  margin-top: .5rem;
+  padding-left: .95rem;
+}
+.margin-quote cite { font-style: normal; }
+.chapter-dark .margin-quote p:first-child { border-left-color: var(--accent-soft); color: #e8e2d4; }
+@media (min-width: 60rem) {
+  .margin-quote {
+    float: right;
+    width: min(250px, 28%);
+    margin: 0 0 var(--space-md) var(--space-lg);
+  }
+}
+@media (min-width: 80rem) {
+  .margin-quote {
+    width: min(260px, 24%);
+    margin: 0 calc(-1 * ((100vw - var(--content-wide)) / 2 - 1rem) + 2rem) var(--space-md) var(--space-lg);
+  }
+}
 @media (min-width: 60rem) and (max-width: 79.99rem) {
   .margin-art {
     float: right;
@@ -402,6 +441,12 @@ details[open] summary { margin-bottom: .4em; }
   .window > .window-body { grid-column: 1; grid-row: 1; }
 }
 .poster { margin: 0; }
+/* every poster scrolls responsively like the Wind Rises hero:
+   pinned inside its article while the section passes */
+@media (min-width: 60rem) {
+  .window > .poster,
+  .chapter > .poster { position: sticky; top: var(--space-lg); align-self: start; }
+}
 .poster img {
   border: 1px solid var(--rule);
   box-shadow: none;
@@ -476,6 +521,64 @@ blockquote {
 /* landing flash when jumping via the comb */
 @keyframes target-flash { from { background-color: rgba(156,74,47,.12); } to { background-color: transparent; } }
 .event:target, section[id]:target { animation: target-flash 1.6s ease-out both; }
+
+/* ---------- pinned age marker ---------- */
+.age-marker {
+  position: fixed;
+  left: clamp(.75rem, 3vw, 3rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .15rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+.age-marker.is-visible { opacity: 1; }
+.am-age {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1;
+  color: var(--accent);
+}
+.am-cap {
+  font-size: .6rem;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--muted);
+}
+.am-year {
+  font-family: var(--serif);
+  font-size: .82rem;
+  color: var(--muted);
+}
+.am-rule {
+  width: 1.6rem; height: 1px;
+  background: var(--rule);
+  margin: .25rem 0;
+}
+@media (max-width: 59.99rem) {
+  .age-marker {
+    top: auto; bottom: .9rem; transform: none;
+    left: .9rem;
+    flex-direction: row;
+    align-items: baseline;
+    gap: .45rem;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: .3rem .8rem;
+  }
+  .am-age { font-size: 1.25rem; }
+  .am-cap { display: none; }
+  .am-year { font-size: .74rem; }
+  .am-rule { display: none; }
+}
 
 /* scroll progress rail (CSS scroll-driven animations, degrades gracefully) */
 .progress-rail {

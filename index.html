@@ -4,19 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hayao Miyazaki — Chronology of His Career</title>
-<meta name="description" content="Sixty years of Hayao Miyazaki, year by year: from Tōei key animator to two Academy Awards — every film, retirement, and return on one annotated timeline.">
+<meta name="description" content="Eighty-four years of Hayao Miyazaki, year by year: from a wartime Tokyo childhood to two Academy Awards — every film, retirement, and return on one annotated timeline.">
 <meta property="og:title" content="Hayao Miyazaki — Chronology of His Career">
 <meta property="og:description" content="Sixty years of drawing, directing, retiring, and returning — an annotated chronology of his career, 1965–2025.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="images/miyazaki-2009.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f2ea'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' text-anchor='middle' fill='%239c4a2f'%3EM%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
+<script src="script.js" defer></script>
 </head>
 <body>
 
+<div class="age-marker" id="age-marker" aria-hidden="true">
+  <span class="am-cap">Age</span>
+  <span class="am-age" id="am-age">–</span>
+  <span class="am-rule"></span>
+  <span class="am-year" id="am-year"></span>
+</div>
+
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <p class="hero-kicker">Chronology of his career · <time datetime="1965">1965</time> – <time datetime="2025">2025</time></p>
+  <p class="hero-kicker">Chronology of his career · <time datetime="1941">1941</time> – <time datetime="2025">2025</time></p>
   <h1 class="hero-title">Hayao<br>Miyazaki</h1>
   <p class="hero-sub">Tōei Animation · Nippon Animation · Studio Ghibli</p>
   <figure class="hero-portrait">
@@ -33,6 +41,7 @@
 <!-- ============ CHRONOLOGY COMB (desktop) ============ -->
 <nav class="comb" aria-label="Life chronology">
   <ul class="comb-list">
+    <li><a href="#life-1941"><span class="line l-end"></span><span class="yr">’41</span><span class="label"><strong>1941–63</strong> Miyazaki Airplane · Tōei</span></a></li>
     <li><a href="#life-1965"><span class="line l-prod"></span><span class="yr">’65</span><span class="label"><strong>1965–73</strong> Tōei years</span></a></li>
     <li><a href="#life-1974"><span class="line l-prod"></span><span class="yr">’74</span><span class="label"><strong>1974–78</strong> Nippon Animation</span></a></li>
     <li><a href="#life-1979"><span class="line l-rel"></span><span class="thumbs"><img src="images/poster-cagliostro.png" alt=""></span><span class="yr">’79</span><span class="label"><strong>1979–83</strong> Cagliostro · Nausicaä manga</span></a></li>
@@ -68,6 +77,77 @@
     <li><a href="#windrises-window"><img src="images/poster-windrises.jpg" alt="" loading="lazy"><span class="fg-year">2013</span><span class="fg-title">The Wind Rises</span></a></li>
     <li><a href="#life-2023"><img src="images/poster-heron.jpg" alt="" loading="lazy"><span class="fg-year">2023</span><span class="fg-title">The Boy and the Heron</span></a></li>
   </ul>
+</section>
+
+<!-- ============ EARLY YEARS ============ -->
+<section class="chapter tone-a" id="life-1941">
+  <header class="chapter-head">
+    <h2 class="chapter-title">Miyazaki Airplane · Gakushuin</h2>
+    <p class="chapter-range"><time datetime="1941">1941</time>–<time datetime="1963">1963</time></p>
+    <p class="chapter-intro">Before animation: a wartime childhood among aeroplane parts, a long absence
+    of his mother, and one film — seen at university — that set everything in motion.</p>
+  </header>
+
+  <figure class="margin-art wide">
+    <img src="images/early-zero.jpg" alt="A6M Zero fighters being assembled in an underground factory, Japan, 1945" loading="lazy">
+    <figcaption>A6M Zero assembly, Japan, 1945 — Miyazaki’s family factory made parts for this fighter</figcaption>
+  </figure>
+
+  <article class="event prod">
+    <p class="year"><time datetime="1941">1941</time><span class="age">aged 0</span></p>
+    <h3>Born in wartime Tokyo</h3>
+    <p>Hayao Miyazaki is born January 5 in Akebonobashi, Shinjuku, Tokyo, the second of four sons<a class="src"
+      href="https://en.wikipedia.org/wiki/Hayao_Miyazaki" data-url="Wikipedia — Hayao Miyazaki">[1]</a>.
+    His father, Katsuji, manages “Miyazaki Airplane”, the family business run by Hayao’s uncle: a factory
+    cutting rudder parts for the Mitsubishi A6M Zero fighter. Wartime evacuation takes the family to the
+    countryside; two of his early memories are of an evacuated, half-deserted town and a mother too ill to
+    embrace him.</p>
+    <p class="meta">Childhood · Miyazaki Airplane · Evacuation to Utsunomiya and Ōmiya</p>
+    <p>The factory shaped him permanently. He later traced his obsession with flight — the beauty of machines,
+    and their terrible cargo — to those years surrounded by warplanes and by men who made them. The Zero
+    returns at the centre of his final feature, <em>The Wind Rises</em>.</p>
+  </article>
+
+  <article class="event minor prod">
+    <p class="year"><time datetime="1947">1947</time><span class="age">aged 6</span></p>
+    <h3>Mother hospitalised</h3>
+    <p>His mother, Yoshiko, falls ill with spinal tuberculosis and spends much of 1947–1955 in hospitals.
+    Young Hayao rides on his father’s bicycle to visit her. Decades later he would pour this memory into
+    <em>My Neighbor Totoro</em>: the bedridden mother Yasuko, the children who cannot reach her, the house
+    in the countryside — the film is widely understood as semi-autobiographical, something he has never
+    denied.</p>
+  </article>
+
+  <article class="event prod">
+    <p class="year"><time datetime="1958">1958</time><span class="age">aged 17</span></p>
+    <h3>Gakushuin · <em>The Tale of the White Serpent</em></h3>
+    <figure class="margin-art">
+      <img src="images/early-hakujaden.jpg" alt="Japanese theatrical poster for The Tale of the White Serpent (1958)" loading="lazy">
+      <figcaption><em>Panda and the Magic Serpent</em> (1958) · © Tōei Animation</figcaption>
+    </figure>
+    <p>After studying political science and economics at Gakushuin University — where he also writes for the
+    children’s literature research club — a classmate drags him to see Tōei’s first colour animated feature,
+    <em>The Tale of the White Serpent</em> (released October 1958)<a class="src" href="https://en.wikipedia.org/wiki/Hayao_Miyazaki" data-url="Wikipedia — Hayao Miyazaki">[2]</a>.
+    He is transfixed. He has said the film convinced him animation could carry real feeling — the sorrows
+    and joys of ordinary people — not just gags for children.</p>
+  </article>
+
+  <aside class="margin-quote">
+    <p>Miyazaki later recalled falling in love with animation that night — and, specifically, with the
+    heroine’s passionate longing, which showed him animation could be about feeling rather than gags.</p>
+    <p class="quote-attr">His recollection of <em>The Tale of the White Serpent</em>, as told in interviews
+    collected in <cite>Starting Point: 1979–1996</cite></p>
+  </aside>
+
+  <article class="event prod">
+    <p class="year"><time datetime="1963">1963</time><span class="age">aged 22</span></p>
+    <h3>Joins Tōei Animation</h3>
+    <p>Graduates from Gakushuin and joins Tōei Animation in April as an in-betweener — the lowest rung of
+    animators, filling in the frames between key drawings<a class="src" href="https://en.wikipedia.org/wiki/Hayao_Miyazaki" data-url="Wikipedia — Hayao Miyazaki">[3]</a>.
+    He is dissatisfied from the start: the work feels mechanical, the studio treats animators as interchangeable.
+    Within months he is organising with the union; within two years he is its chief secretary, agitating
+    alongside Isao Takahata, the director who will become his lifelong partner-in-crime.</p>
+  </article>
 </section>
 
 <!-- ============ TOEI YEARS ============ -->
@@ -505,6 +585,11 @@
     producer Toshio Suzuki and meets Disney’s John Lasseter for international support.</p>
   </article>
 
+  <aside class="margin-quote">
+    <blockquote>I made this film for ten-year-old girls. That’s it — the daughters of my friends.</blockquote>
+    <p class="quote-attr">Miyazaki, on why he made <em>Spirited Away</em>, in interviews around its release</p>
+  </aside>
+
   <article class="event rel window" id="spirited-window">
     <figure class="poster">
       <img src="images/poster-spirited.png" alt="Japanese theatrical poster for Spirited Away" loading="lazy">
@@ -585,6 +670,11 @@
     he uses new techniques — drawing with pastels — for the tsunami sequence. At 66, he speaks publicly about
     his age and remaining years<a class="src" href="https://ghibli.fandom.com/wiki/Ponyo" data-url="Wikipedia — Ponyo">[47]</a>.</p>
   </article>
+
+  <aside class="margin-quote">
+    <blockquote>It’s good to be alive.</blockquote>
+    <p class="quote-attr">The message Miyazaki said he most wanted to hand children with <em>Ponyo</em></p>
+  </aside>
 
   <article class="event rel window" id="ponyo-window">
     <figure class="poster">
@@ -761,8 +851,17 @@
       directed by Miyazaki at 82. Critical acclaim, another box-office success, and a worldwide following
       celebrate the return.</p>
       <p class="meta">Feature film · Direction · Written at 82 · 7 years in development</p>
+      <p>He has said the film was made with his grandson in mind — a grandfather’s answer to the question of
+      what to leave behind. He drew with a weakening hand, aware it might be his last film, and told
+      producers there would be no trailer and no marketing: “Because I don’t know what it means myself.”
+      The studio released it anyway, in silence.</p>
     </div>
   </article>
+
+  <aside class="margin-quote light-on-dark">
+    <blockquote>I made this film for my grandson. It’s my way of saying goodbye.</blockquote>
+    <p class="quote-attr">Miyazaki on <em>The Boy and the Heron</em>, as reported around its premiere</p>
+  </aside>
 
   <article class="event rel light-on-dark">
     <p class="year"><time datetime="2024">2024</time><span class="age">aged 83</span></p>
