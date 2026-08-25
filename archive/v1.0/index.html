@@ -9,58 +9,55 @@
 <meta property="og:description" content="Sixty years of drawing, directing, retiring, and returning — an annotated chronology of his career, 1965–2025.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="images/miyazaki-2009.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFFFFF'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' text-anchor='middle' fill='%230077CC'%3EM%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css?v=1.1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f2ea'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' text-anchor='middle' fill='%239c4a2f'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css?v=7">
 <script src="script.js" defer></script>
 </head>
 <body>
 
-<div class="page-surface">
-
-<!-- ============ MOBILE STRIP ============ -->
-<div class="mobile-bar">
-  <button id="mi-toggle" aria-expanded="false" aria-controls="mi-panel">
-    <span class="mb-year" id="mb-year">1941</span>
-    <span class="mb-title" id="mb-title">Chronology</span>
-    <span class="mb-caret" aria-hidden="true">▾</span>
-  </button>
+<div class="age-marker" id="age-marker" aria-hidden="true">
+  <span class="am-cap">Age</span>
+  <span class="am-age" id="am-age">–</span>
+  <span class="am-rule"></span>
+  <span class="am-year" id="am-year"></span>
 </div>
-<nav class="mobile-panel" id="mi-panel" aria-label="Chronology index" hidden>
-  <ul>
-    <li><a href="#life-1941"><strong>’41</strong> Miyazaki Airplane · Tōei</a></li>
-    <li><a href="#life-1965"><strong>’65</strong> Tōei years</a></li>
-    <li><a href="#life-1974"><strong>’74</strong> Nippon Animation · Conan</a></li>
-    <li><a href="#life-1979"><strong>’79</strong> Cagliostro · Nausicaä manga</a></li>
-    <li><a href="#life-1984"><strong>’84</strong> Nausicaä</a></li>
-    <li><a href="#life-1985"><strong>’85</strong> Studio Ghibli founded</a></li>
-    <li><a href="#life-1990"><strong>’90</strong> Porco Rosso · Nausicaä ends</a></li>
-    <li><a href="#life-1997"><strong>’97</strong> Princess Mononoke</a></li>
-    <li><a href="#life-2001"><strong>’01</strong> Spirited Away · Howl</a></li>
-    <li><a href="#life-2005"><strong>’05</strong> Ponyo · The Wind Rises</a></li>
-    <li><a href="#life-2013"><strong>’13</strong> Retirement</a></li>
-    <li><a href="#life-2016"><strong>’16</strong> Seven quiet years</a></li>
-    <li><a href="#life-2023"><strong>’23</strong> The Boy and the Heron</a></li>
-    <li><a href="#sources"><strong>§</strong> Sources cited by this page</a></li>
-  </ul>
-</nav>
 
-<!-- ============ HEADER ============ -->
-<header class="site-head" id="top">
-  <p class="sh-kicker">A chronology</p>
-  <h1 class="sh-title">Hayao Miyazaki</h1>
-  <p class="sh-range"><time datetime="1941">1941</time> — <time datetime="2025">2025</time></p>
-  <p class="sh-desc">Eighty-four years of Hayao Miyazaki, year by year: from a wartime Tokyo childhood
-  to two Academy Awards — every film, retirement, and return. Tōei Animation · Nippon Animation ·
-  Studio Ghibli.</p>
-  <figure class="sh-portrait">
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <p class="hero-kicker">Chronology of his career · <time datetime="1941">1941</time> – <time datetime="2025">2025</time></p>
+  <h1 class="hero-title">Hayao<br>Miyazaki</h1>
+  <p class="hero-sub">Tōei Animation · Nippon Animation · Studio Ghibli</p>
+  <figure class="hero-portrait">
     <img src="images/miyazaki-2009.jpg" alt="Hayao Miyazaki at Comic-Con in July 2009"
          width="420" height="280" loading="eager">
     <figcaption>Hayao Miyazaki, San Diego Comic-Con, July 2009 · photo Dominick
     (CC BY 2.0), via Wikimedia Commons</figcaption>
   </figure>
-  <hr class="sh-rule">
-  <p class="sh-begin">Chronology</p>
+  <p class="hero-scroll">Scroll through the years ↓&ensp;<span class="hero-comb-hint">or use the comb on the right</span></p>
 </header>
+
+<div class="progress-rail" aria-hidden="true"></div>
+
+<!-- ============ CHRONOLOGY COMB (desktop) ============ -->
+<nav class="comb" aria-label="Life chronology">
+  <ul class="comb-list">
+    <li><a href="#life-1941"><span class="line l-end"></span><span class="yr">’41</span><span class="label"><strong>1941–63</strong> Miyazaki Airplane · Tōei</span></a></li>
+    <li><a href="#life-1965"><span class="line l-prod"></span><span class="yr">’65</span><span class="label"><strong>1965–73</strong> Tōei years</span></a></li>
+    <li><a href="#life-1974"><span class="line l-prod"></span><span class="yr">’74</span><span class="label"><strong>1974–78</strong> Nippon Animation</span></a></li>
+    <li><a href="#life-1979"><span class="line l-rel"></span><span class="thumbs"><img src="images/poster-cagliostro.png" alt=""></span><span class="yr">’79</span><span class="label"><strong>1979–83</strong> Cagliostro · Nausicaä manga</span></a></li>
+    <li><a href="#life-1984"><span class="line l-rel"></span><span class="thumbs"><img src="images/poster-nausicaa.png" alt=""></span><span class="yr">’84</span><span class="label"><strong>1984</strong> Nausicaä</span></a></li>
+    <li><a href="#life-1985"><span class="line l-rel"></span><span class="thumbs"><img src="images/poster-laputa.jpg" alt=""><img src="images/poster-totoro.jpg" alt=""><img src="images/poster-kiki.jpg" alt=""></span><span class="yr">’85</span><span class="label"><strong>1985–89</strong> Studio Ghibli founded</span></a></li>
+    <li><a href="#life-1990"><span class="line l-prod"></span><span class="thumbs"><img src="images/poster-porco.jpg" alt=""></span><span class="yr">’90</span><span class="label"><strong>1990–96</strong> Porco Rosso · Nausicaä ends</span></a></li>
+    <li><a href="#life-1997"><span class="line l-rel"></span><span class="thumbs"><img src="images/poster-mononoke.png" alt=""></span><span class="yr">’97</span><span class="label"><strong>1997</strong> Princess Mononoke</span></a></li>
+    <li><a href="#life-2001"><span class="line l-rel"></span><span class="thumbs"><img src="images/poster-spirited.png" alt=""><img src="images/poster-howl.jpg" alt=""></span><span class="yr">’01</span><span class="label"><strong>1998–2004</strong> Spirited Away · Howl</span></a></li>
+    <li><a href="#life-2005"><span class="line l-prod"></span><span class="thumbs"><img src="images/poster-ponyo.png" alt=""></span><span class="yr">’05</span><span class="label"><strong>2005–12</strong> Ponyo · The Wind Rises</span></a></li>
+    <li><a href="#life-2013"><span class="line l-rel"></span><span class="thumbs"><img src="images/poster-windrises.jpg" alt=""></span><span class="yr">’13</span><span class="label"><strong>2013–15</strong> Retirement</span></a></li>
+    <li><a href="#life-2016"><span class="line l-prod"></span><span class="yr">’16</span><span class="label"><strong>2016–22</strong> Seven quiet years</span></a></li>
+    <li><a href="#life-2023"><span class="line l-rel"></span><span class="thumbs"><img src="images/poster-heron.jpg" alt=""></span><span class="yr">’23</span><span class="label"><strong>2023–25</strong> The heron</span></a></li>
+    <li><a href="#sources"><span class="line l-end"></span><span class="yr">§</span><span class="label"><strong>Sources</strong> cited by this page</span></a></li>
+    <li><a href="#top"><span class="line l-end"></span><span class="yr">↑</span><span class="label"><strong>Top</strong> return to 1965</span></a></li>
+  </ul>
+</nav>
 
 <main>
 
@@ -937,133 +934,42 @@
 </main>
 
 <footer>
-  <div class="foot-inner">
   <p><strong>Hayao Miyazaki — Chronology of His Career.</strong> Chronology compiled from the supplied
   timeline document; numbered citations follow its footnote numbering. Images stored locally in
   <code>images/</code>.</p>
   <p><a href="#top">Back to the beginning</a></p>
-  </div>
 </footer>
 
-</div><!-- /.page-surface -->
-
-<!-- ============ PINNED AGE RAIL (desktop) ============ -->
-<div class="age-marker" id="age-marker" aria-hidden="true">
-  <span class="am-cap">Age</span>
-  <span class="am-age" id="am-age">–</span>
-  <span class="am-rule"></span>
-  <span class="am-year" id="am-year"></span>
-</div>
-
-<!-- ============ YEAR INDEX (desktop) ============ -->
-<nav class="year-index" aria-label="Year index">
-  <ul>
-    <li><a href="#life-1941"><span class="yi-label">Miyazaki Airplane · Tōei</span><span class="yi-yr">’41</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-1965"><span class="yi-label">Tōei years</span><span class="yi-yr">’65</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-1974"><span class="yi-label">Nippon Animation · Conan</span><span class="yi-yr">’74</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-1979"><span class="yi-label">Cagliostro · Nausicaä manga</span><span class="yi-yr">’79</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-1984"><span class="yi-label">Nausicaä</span><span class="yi-yr">’84</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-1985"><span class="yi-label">Studio Ghibli founded</span><span class="yi-yr">’85</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-1990"><span class="yi-label">Porco Rosso · Nausicaä ends</span><span class="yi-yr">’90</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-1997"><span class="yi-label">Princess Mononoke</span><span class="yi-yr">’97</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-2001"><span class="yi-label">Spirited Away · Howl</span><span class="yi-yr">’01</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-2005"><span class="yi-label">Ponyo · The Wind Rises</span><span class="yi-yr">’05</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-2013"><span class="yi-label">Retirement</span><span class="yi-yr">’13</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-2016"><span class="yi-label">Seven quiet years</span><span class="yi-yr">’16</span><span class="yi-dot"></span></a></li>
-    <li><a href="#life-2023"><span class="yi-label">The Boy and the Heron</span><span class="yi-yr">’23</span><span class="yi-dot"></span></a></li>
-    <li><a href="#sources"><span class="yi-label">Sources</span><span class="yi-yr">§</span><span class="yi-dot"></span></a></li>
-  </ul>
-</nav>
-
 <script>
-/* Year index scrollspy — v1.1.
-   The active entry is whichever chronology anchor occupies the reading zone
-   (the upper-middle of the viewport). Neighbours fade; the current year is
-   full blue with a dot, and exposes its state via aria-current. */
+/* Highlight the comb entry nearest mid-viewport while scrolling. */
 (function () {
-  var links = Array.prototype.slice.call(
-    document.querySelectorAll('.year-index a[href^="#"], .mobile-panel a[href^="#"]'));
-  if (!links.length) return;
-
-  /* desktop links only drive the index states */
-  var dLinks = links.filter(function (a) { return a.closest('.year-index'); });
-  var stops = [];
-  dLinks.forEach(function (a) {
-    var el = document.getElementById(a.getAttribute('href').slice(1));
-    if (el) stops.push({ el: el, link: a });
+  if (!('IntersectionObserver' in window)) return;
+  var links = document.querySelectorAll('.comb-list a[href^="#"]');
+  var byId = {};
+  Array.prototype.forEach.call(links, function (a) {
+    byId[a.getAttribute('href').slice(1)] = a;
   });
-
-  var lastId = null;
-  function update() {
-    var line = window.innerHeight * 0.4;   /* reading zone: upper-middle band */
-    var current = null;
-    for (var i = 0; i < stops.length; i++) {
-      if (stops[i].el.getBoundingClientRect().top <= line) current = stops[i];
-    }
-    if (!current && stops.length) current = stops[0];
-    var id = current ? current.link.getAttribute('href') : null;
-    if (id === lastId) return;
-    lastId = id;
-    dLinks.forEach(function (a, idx) {
-      var active = current && a === current.link;
-      a.classList.toggle('is-active', !!active);
-      if (active) a.setAttribute('aria-current', 'true');
-      else a.removeAttribute('aria-current');
-      var prev = stops[idx - 1], next = stops[idx + 1];
-      a.classList.toggle('is-near',
-        !active && ((current && prev && current.link === prev.link) ||
-                    (current && next && current.link === next.link)));
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var a = byId[e.target.id];
+      if (a && e.isIntersecting) {
+        links.forEach(function (l) { l.classList.remove('is-active'); });
+        a.classList.add('is-active');
+      }
     });
-    /* mobile strip label */
-    if (current) {
-      var yrEl = current.link.querySelector('.yi-yr');
-      var lbEl = current.link.querySelector('.yi-label');
-      document.getElementById('mb-year').textContent = yrEl ? yrEl.textContent : '';
-      document.getElementById('mb-title').textContent = lbEl ? lbEl.textContent : 'Chronology';
-      links.forEach(function (a) {
-        if (a.getAttribute('href') === id) a.setAttribute('aria-current', 'true');
-        else a.removeAttribute('aria-current');
-      });
-    }
-  }
-
-  var ticking = false;
-  window.addEventListener('scroll', function () {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(function () { update(); ticking = false; });
-    }
-  }, { passive: true });
-  window.addEventListener('resize', update);
-  update();
-})();
-</script>
-
-<script>
-/* Mobile index panel toggle. */
-(function () {
-  var btn = document.getElementById('mi-toggle');
-  var panel = document.getElementById('mi-panel');
-  if (!btn || !panel) return;
-  btn.addEventListener('click', function () {
-    var open = panel.hidden;
-    panel.hidden = !open;
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  panel.addEventListener('click', function (e) {
-    if (e.target.closest('a')) {
-      panel.hidden = true;
-      btn.setAttribute('aria-expanded', 'false');
-    }
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  Object.keys(byId).forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) io.observe(el);
   });
 })();
 </script>
 
 <script>
-/* Arrow keys jump between chronology sections (index order). */
+/* Arrow keys jump between chronology sections (comb order). */
 (function () {
   var stops = Array.prototype.map.call(
-    document.querySelectorAll('.year-index a[href^="#"]'),
+    document.querySelectorAll('.comb-list a[href^="#"]'),
     function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }
   ).filter(Boolean);
   if (!stops.length) return;
