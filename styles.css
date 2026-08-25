@@ -215,9 +215,17 @@ figcaption {
   align-items: center;
   justify-content: flex-end;
   gap: .55rem;
-  padding: .1rem 0;
+  padding: .22rem .45rem;
+  border-radius: 999px;
   text-decoration: none;
   outline-offset: 4px;
+  transition: background-color 240ms ease, box-shadow 240ms ease;
+}
+.comb-list a:hover,
+.comb-list a:focus-visible,
+.comb-list a.is-active {
+  background: var(--paper);
+  box-shadow: 0 1px 8px rgba(34,32,28,.14), 0 0 0 1px var(--rule);
 }
 .comb-list .line {
   order: 3;
@@ -274,7 +282,9 @@ figcaption {
   object-position: center;
   flex: none;
   border: 1px solid var(--rule);
+  border-radius: 2px;
   background: var(--paper);
+  box-shadow: 0 2px 6px rgba(34,32,28,.22);
   display: block;
 }
 .comb-list a:hover .thumbs,
@@ -355,8 +365,8 @@ details[open] summary { margin-bottom: .4em; }
 @media (min-width: 80rem) {
   .margin-art {
     float: right;
-    width: min(240px, 24%);
-    margin: 0 calc(-1 * ((100vw - var(--content-wide)) / 2 - 1rem) + 2rem) var(--space-md) var(--space-md);
+    width: min(230px, 24%);
+    margin: 0 0 var(--space-md) var(--space-lg);
     position: relative;
   }
   /* keep floated art out of the following event's text column */
@@ -400,8 +410,22 @@ details[open] summary { margin-bottom: .4em; }
 }
 @media (min-width: 80rem) {
   .margin-quote {
-    width: min(260px, 24%);
-    margin: 0 calc(-1 * ((100vw - var(--content-wide)) / 2 - 1rem) + 2rem) var(--space-md) var(--space-lg);
+    width: min(250px, 24%);
+    margin: 0 0 var(--space-md) var(--space-lg);
+  }
+}
+
+/* margin figures and quotes never pile on top of each other:
+   each new float starts below the previous one */
+.margin-art,
+.margin-quote { clear: both; }
+
+/* reserve gutters so body text and floated art stay clear of the
+   fixed age marker (left) and the chronology comb (right) */
+@media (min-width: 60rem) {
+  .chapter {
+    padding-left: clamp(4.5rem, 7vw, 6rem);
+    padding-right: clamp(8rem, 13vw, 11rem);
   }
 }
 @media (min-width: 60rem) and (max-width: 79.99rem) {
@@ -772,6 +796,9 @@ footer a { color: inherit; }
     padding: .85rem .7rem;
     min-height: 44px;
   }
+  .comb-list a:hover,
+  .comb-list a:focus-visible,
+  .comb-list a.is-active { box-shadow: none; background: transparent; }
   .comb-list .line { width: 1.4rem !important; flex: 0 0 auto; }
   .comb-list .l-rel.line { width: 2.2rem !important; }
   .comb-list .label, .comb-list .thumbs { display: none; }
@@ -792,7 +819,7 @@ footer a { color: inherit; }
     --content-wide: 64rem;
     --content-width: 48rem;
   }
-  .chapter { padding-left: 3rem; padding-right: 3rem; }
+  .chapter { padding-left: 4.5rem; padding-right: 8rem; }
   .event p { max-width: 58ch; }   /* comfortable line length next to art */
 }
 
