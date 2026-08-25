@@ -45,10 +45,12 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: var(--page);
-  background-image:
-    repeating-linear-gradient(0deg,
-      rgba(32,40,48,.018) 0px, rgba(32,40,48,.018) 1px,
-      transparent 1px, transparent 4px);
+  background-image: linear-gradient(
+    rgba(32,40,48,.018) 1px, transparent 1px);
+  /* one 4px tile repeated by background-repeat; repeating-linear-gradient
+     accumulates precision errors over tall pages and the lines break up */
+  background-size: 100% 4px;
+  background-repeat: repeat;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 1.0625rem;
