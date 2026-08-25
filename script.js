@@ -56,23 +56,22 @@
     if (!points.length) return;
     var center = window.scrollY + window.innerHeight * 0.45;
     var t = targetAt(center);
-    if (t === null) return;
+    if (t !== null) {
+      /* only show the marker once the reader reaches the first event */
+      var atFirst = center >= points[0].y - 40;
+      marker.classList.toggle('is-visible', atFirst);
+      if (atFirst) {
+        var targetAge = t.year - BORN;
+        if (dispAge === null) dispAge = targetAge;
+        dispAge += (targetAge - dispAge) * 0.18; // ease toward scroll position
+        if (Math.abs(targetAge - dispAge) < 0.002) dispAge = targetAge;
 
-    /* only show the marker once the reader reaches the first event */
-    var atFirst = center >= points[0].y - 40;
-    marker.classList.toggle('is-visible', atFirst);
-    if (!atFirst) return;
-
-    var targetAge = t.year - BORN;
-    if (dispAge === null) dispAge = targetAge;
-    dispAge += (targetAge - dispAge) * 0.18; // ease toward scroll position
-    if (Math.abs(targetAge - dispAge) < 0.002) dispAge = targetAge;
-
-    var a = Math.floor(dispAge).toString();
-    if (a !== lastShownAge) { ageEl.textContent = a; lastShownAge = a; }
-    var yr = Math.floor(t.year).toString();
-    if (yr !== lastShownYear && yr.length === 4) { yearEl.textContent = yr; lastShownYear = yr; }
-
+        var a = Math.floor(dispAge).toString();
+        if (a !== lastShownAge) { ageEl.textContent = a; lastShownAge = a; }
+        var yr = Math.floor(t.year).toString();
+        if (yr !== lastShownYear && yr.length === 4) { yearEl.textContent = yr; lastShownYear = yr; }
+      }
+    }
     requestAnimationFrame(frame);
   }
 

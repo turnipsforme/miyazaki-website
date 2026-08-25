@@ -318,6 +318,39 @@ main { display: block; }
 .chapter-intro { color: var(--muted); margin-top: var(--space-xs); max-width: 40rem; }
 
 .event { margin-bottom: 1.6rem; }
+
+/* ---- career milestones: first time he does something new ---- */
+.event.first-role {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.event.first-role::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .45rem;
+  bottom: .3rem;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.first-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: .2em .6em .12em;
+  margin-left: .7em;
+  vertical-align: .3em;
+  white-space: nowrap;
+}
+.chapter-dark .event.first-role::before { background: var(--accent-soft); }
+.chapter-dark .first-tag { color: var(--accent-soft); }
 .event .year { font-size: 2rem; line-height: 1.1; margin-bottom: .25rem; }
 .event h3 { font-size: 1.2rem; margin-bottom: .45rem; }
 .event p:last-child { margin-bottom: 0; }
