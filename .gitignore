@@ -3,3 +3,7 @@
 /*.md
 !/ARTICLE_WINDOWS.md
 /articles/
+
+# Jekyll local build artifacts
+/_site/
+/.jekyll-cache/
