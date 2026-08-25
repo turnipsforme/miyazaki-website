@@ -22,17 +22,17 @@
 
   /* the four-column reading layout */
   --age-col:    90px;
-  --main-col:   minmax(620px, 760px);
+  --main-col:   minmax(640px, 750px);
   --notes-col:  210px;
-  --index-col:  70px;
-  --column-gap: 28px;
+  --index-col:  64px;
+  --column-gap: 26px;
 
-  --page-w: min(calc(100% - 64px), 1220px);
-  --page-inset: max(32px, calc((100vw - 1220px) / 2)); /* gap either side of the sheet */
+  --page-w: min(calc(100vw - 48px), 1320px);
+  --page-inset: max(24px, calc((100vw - 1320px) / 2)); /* gap either side of the sheet */
 
   /* vertical rhythm: exactly three spacing levels */
   --space-small:   12px;
-  --space-entry:   32px;
+  --space-entry:   30px;
   --space-chapter: 80px;
 
   --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
@@ -79,7 +79,7 @@ main { display: block; padding-bottom: 3rem; }
 
 /* ---------- 4. Header (wider than the chronology, still not a hero) ---------- */
 .site-head {
-  width: min(calc(100% - 64px), 980px);
+  width: min(calc(100% - 64px), 1060px);
   margin-inline: auto;
   padding-top: clamp(2rem, 5vh, 3.5rem);
 }
@@ -114,8 +114,8 @@ main { display: block; padding-bottom: 3rem; }
 @media (min-width: 900px) {
   .site-intro {
     display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 48px;
     align-items: end;
   }
   .sh-portrait { margin: 0; max-width: none; }
@@ -153,7 +153,7 @@ main { display: block; padding-bottom: 3rem; }
 .chapter-head { display: contents; }
 .chapter-head > * { grid-column: 1; padding-inline: 1.5rem; }
 
-.age-rail        { grid-column: 1; }
+.chapter-age     { grid-column: 1; }
 .event           { grid-column: 1; padding-inline: 1.5rem; }
 .row-poster      { grid-column: 1; padding-inline: 1.5rem; }
 .margin-quote,
@@ -195,17 +195,28 @@ main { display: block; padding-bottom: 3rem; }
 /* ---------- 6. Event typography ---------- */
 .event { margin-bottom: var(--space-entry); }
 
+/* three explicit tiers — controlled irregularity, not uniformity */
 .event .year {
   font: 42px/1.05 var(--serif);
   color: var(--ink);
   margin-bottom: .1rem;
 }
-.event.minor .year { font-size: 1.55rem; }
 .event h3 { font-size: 26px; line-height: 1.2; margin: 8px 0 12px; }
-.event.minor h3 { font-size: 1.15rem; }
 .event p { max-width: 62ch; }
 .event p:last-child { margin-bottom: 0; }
+
+.event.minor .year { font-size: 28px; }
+.event.minor h3 { font-size: 19px; }
 .event.minor p { font-size: .96rem; }
+.event.minor { margin-bottom: 24px; }
+
+.event.major {
+  padding-top: 18px;
+  margin-bottom: 56px;      /* life-changing moments get breathing room */
+}
+.event.major .year { font-size: 46px; }
+.event.major h3 { font-size: 32px; }
+.window-hero .window-year { font-size: 46px; }
 
 .age {
   display: inline-block;
@@ -360,18 +371,21 @@ blockquote {
 }
 .margin-quote cite { font-style: normal; }
 
-/* ---------- 8. Age rail (context — nothing else) ---------- */
-.age-rail {
-  /* deliberately NOT sticky: a sticky rail outlives short rows (minor
-     entries) and pins on top of the next row's rail. Static placement
-     guarantees one rail per row, aligned to its event. */
-  position: static;
+/* ---------- 8. Chapter age marker (one per chapter, sticky) ----------
+   The left column communicates time at the CHAPTER level: one persistent
+   AGE / age / year-range marker per chapter, sticky while that chapter
+   scrolls. Individual event years stay in the chronology; individual
+   ages stay inline on mobile only. One marker per chapter means sticky
+   positioning can never overlap a neighbouring marker. */
+.chapter-age {
+  position: sticky;
+  top: 7rem;
   align-self: start;
   justify-self: center;
   text-align: center;
   padding-top: .35rem;
   pointer-events: none;
-  display: none;
+  display: none;                 /* mobile: content-first, ages inline */
 }
 .age-label {
   display: block;
@@ -383,15 +397,17 @@ blockquote {
 .age-number {
   display: block;
   margin-top: .2rem;
-  font: 44px/1 var(--serif);
-  color: var(--muted);
+  font: 46px/1 var(--serif);
+  color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
-.age-year {
+.age-years {
   display: block;
   margin-top: .4rem;
   font-size: 11px;
+  letter-spacing: .06em;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 /* ---------- 9. Year index (navigation, not content) ---------- */
@@ -578,12 +594,15 @@ main a:not(.src):not(.return-link):hover { text-decoration: underline; color: va
   .margin-quote, .margin-art, .margin-art.wide {
     grid-column: 2;
   }
-  .age-rail {
+  .chapter-age {
     display: block;
     grid-column: 1;
     padding-left: .25rem;
     text-align: left;
   }
+  .chapter-age .age-number { font-size: 34px; } /* quieter on tablet */
+  /* ages live in the left rail from here up — no inline repetition */
+  .event .year .age { display: none; }
   .event { padding-inline: 0 1.5rem; }
   .chapter-head > * { padding-inline: 0 1.5rem; }
   .row-poster, .margin-quote, .margin-art { padding-inline: 0; max-width: 420px; }
@@ -606,7 +625,8 @@ main a:not(.src):not(.return-link):hover { text-decoration: underline; color: va
       var(--notes-col)
       var(--index-col);
   }
-  .age-rail { grid-column: 1; justify-self: center; text-align: center; padding-left: 0; }
+  .chapter-age { grid-column: 1; justify-self: center; text-align: center; padding-left: 0; }
+  .chapter-age .age-number { font-size: 46px; }
   .event, .row-poster { grid-column: 2; }
   .chapter-head > * { grid-column: 2; padding-inline: 0; }
   .event { padding-inline: 0; }

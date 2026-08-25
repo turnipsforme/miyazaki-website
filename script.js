@@ -67,4 +67,28 @@
 
   /* initial state: first chapter is active before any intersection fires */
   window.addEventListener('load', function () { setActive(0); });
+
+  /* The visible range is derived from the chronology itself, never
+     hard-coded, so the header can never drift out of sync with it. */
+  var headerRange = document.querySelector('.sh-range');
+  if (headerRange && events.length) {
+    var startYear = parseInt(events[0].dataset.year, 10);
+    var endYear = parseInt(events[events.length - 1].dataset.year, 10);
+    headerRange.innerHTML =
+      '<time datetime="' + startYear + '">' + startYear + '</time>' +
+      ' \u2014 ' +
+      '<time datetime="' + endYear + '">' + endYear + '</time>';
+  }
+})();
+
+/* Escape closes the mobile index panel. */
+(function () {
+  var toggle = document.getElementById('mi-toggle');
+  var panel = document.getElementById('mi-panel');
+  if (!toggle || !panel) return;
+  document.addEventListener('keydown', function (event) {
+    if (event.key !== 'Escape') return;
+    toggle.setAttribute('aria-expanded', 'false');
+    panel.hidden = true;
+  });
 })();
