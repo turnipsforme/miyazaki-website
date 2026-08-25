@@ -360,8 +360,10 @@ blockquote {
 
 /* ---------- 8. Age rail (context — nothing else) ---------- */
 .age-rail {
-  position: sticky;
-  top: 7rem;
+  /* deliberately NOT sticky: a sticky rail outlives short rows (minor
+     entries) and pins on top of the next row's rail. Static placement
+     guarantees one rail per row, aligned to its event. */
+  position: static;
   align-self: start;
   justify-self: center;
   text-align: center;
