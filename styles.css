@@ -215,17 +215,9 @@ figcaption {
   align-items: center;
   justify-content: flex-end;
   gap: .55rem;
-  padding: .22rem .45rem;
-  border-radius: 999px;
+  padding: .1rem 0;
   text-decoration: none;
   outline-offset: 4px;
-  transition: background-color 240ms ease, box-shadow 240ms ease;
-}
-.comb-list a:hover,
-.comb-list a:focus-visible,
-.comb-list a.is-active {
-  background: var(--paper);
-  box-shadow: 0 1px 8px rgba(34,32,28,.14), 0 0 0 1px var(--rule);
 }
 .comb-list .line {
   order: 3;
@@ -424,7 +416,7 @@ details[open] summary { margin-bottom: .4em; }
    fixed age marker (left) and the chronology comb (right) */
 @media (min-width: 60rem) {
   .chapter {
-    padding-left: clamp(4.5rem, 7vw, 6rem);
+    padding-left: clamp(3.25rem, 5vw, 4.5rem);
     padding-right: clamp(8rem, 13vw, 11rem);
   }
 }
@@ -468,8 +460,7 @@ details[open] summary { margin-bottom: .4em; }
 /* every poster scrolls responsively like the Wind Rises hero:
    pinned inside its article while the section passes */
 @media (min-width: 60rem) {
-  .window > .poster,
-  .chapter > .poster { position: sticky; top: var(--space-lg); align-self: start; }
+  .window > .poster { position: sticky; top: var(--space-lg); align-self: start; }
 }
 .poster img {
   border: 1px solid var(--rule);
@@ -796,9 +787,6 @@ footer a { color: inherit; }
     padding: .85rem .7rem;
     min-height: 44px;
   }
-  .comb-list a:hover,
-  .comb-list a:focus-visible,
-  .comb-list a.is-active { box-shadow: none; background: transparent; }
   .comb-list .line { width: 1.4rem !important; flex: 0 0 auto; }
   .comb-list .l-rel.line { width: 2.2rem !important; }
   .comb-list .label, .comb-list .thumbs { display: none; }
@@ -819,7 +807,7 @@ footer a { color: inherit; }
     --content-wide: 64rem;
     --content-width: 48rem;
   }
-  .chapter { padding-left: 4.5rem; padding-right: 8rem; }
+  .chapter { padding-left: 3.5rem; padding-right: 8rem; }
   .event p { max-width: 58ch; }   /* comfortable line length next to art */
 }
 

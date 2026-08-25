@@ -34,8 +34,9 @@
 
   function targetAt(centerY) {
     if (!points.length) return null;
+    /* never extrapolate before the first event — hold at it instead */
     if (centerY <= points[0].y) {
-      return { year: points[0].year - (points[0].y - centerY) / 600 };
+      return { year: points[0].year };
     }
     var last = points[points.length - 1];
     if (centerY >= last.y) {
@@ -57,8 +58,10 @@
     var t = targetAt(center);
     if (t === null) return;
 
-    var heroH = document.querySelector('.hero') ? document.querySelector('.hero').offsetHeight : 400;
-    marker.classList.toggle('is-visible', window.scrollY > heroH * 0.6);
+    /* only show the marker once the reader reaches the first event */
+    var atFirst = center >= points[0].y - 40;
+    marker.classList.toggle('is-visible', atFirst);
+    if (!atFirst) return;
 
     var targetAge = t.year - BORN;
     if (dispAge === null) dispAge = targetAge;
