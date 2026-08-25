@@ -342,6 +342,50 @@ details {
 details summary { cursor: pointer; color: var(--green); }
 details[open] summary { margin-bottom: .4em; }
 
+/* margin concept art: floats in the outer margin on wide screens,
+   inline small figure below text otherwise */
+.margin-art {
+  margin: var(--space-sm) 0 var(--space-md);
+  max-width: 260px;
+}
+.margin-art img {
+  border: 1px solid var(--rule);
+  box-shadow: 4px 4px 0 rgba(34,32,28,.06);
+}
+@media (min-width: 80rem) {
+  .margin-art {
+    float: right;
+    width: min(240px, 24%);
+    margin: 0 calc(-1 * ((100vw - var(--content-wide)) / 2 - 1rem) + 2rem) var(--space-md) var(--space-md);
+    position: relative;
+  }
+  /* keep floated art out of the following event's text column */
+  .margin-art + .event { clear: none; }
+  .event { overflow: visible; }
+  main { overflow-x: clip; }
+  .margin-art.wide { width: min(280px, 26%); }
+}
+@media (min-width: 60rem) and (max-width: 79.99rem) {
+  .margin-art {
+    float: right;
+    width: min(220px, 30%);
+    margin: 0 0 var(--space-md) var(--space-lg);
+  }
+  .chapter::after { content: ""; display: block; clear: both; }
+}
+
+/* failing / cancelled projects */
+.fail h3::after {
+  content: "cancelled";
+  font-family: var(--sans);
+  font-size: .62em;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-left: .7em;
+  vertical-align: .15em;
+}
+
 /* windows */
 .window {
   display: grid;
